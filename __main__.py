@@ -21,7 +21,7 @@ html = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n
 <body style="color:pink;text-align:center;font-size:30px;background:#111">
 <h1>夜雨市欢迎您!</h1>
 <p>域名正在备案中，敬请期待……</p>
-<p>远程推送同步测试5<p>
+<p>远程推送同步测试6<p>
 </body>
 </html>
 """
