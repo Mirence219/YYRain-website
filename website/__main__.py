@@ -1,9 +1,13 @@
 import socket
 from datetime import datetime
+import os
 
 host = "0.0.0.0"
 port = 80
 PUBLIC_IP = "81.70.42.92"
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+html_path = os.path.join(BASE_DIR, "template/home.html")
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -16,16 +20,12 @@ print("公网访问：81.70.43.92")
 print("待备案域名：YYRain.cn")
 print("-"*50)
 
-html = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n
-<html>
-    <body style="color:pink;text-align:center;font-size:30px;background:#111">
-        <h1>夜雨市欢迎您!</h1>
-        <p>域名正在备案中，敬请期待……</p>
-        <p>远程推送同步测试成功！<p>
-        <p>真的！没骗你！<p>
-    </body>
-</html>
-"""
+# 读取你写的 HTML 文件
+with open(html_path, "r", encoding="utf-8") as f:
+    html_content = f.read()
+
+# 组装 HTTP 响应（必须保留！浏览器才能识别）
+html = f"""HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n\r\n{html_content}"""
 
 def check_visit_type(host_header, client_ip):
     if not host_header:
