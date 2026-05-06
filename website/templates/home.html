@@ -2,81 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    {% include 'base.html' %}
     <title>夜雨市 | 芒果方块粉丝服</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="夜雨市 | 芒果方块公益粉丝服组织" />
-    <meta name="keywords" content="芒果方块,夜雨市,我的世界,Mangocraft,Minecraft,夜雨,社区" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="夜雨市 | 芒果方块粉丝服">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="夜雨市（Night Rain），芒果方块Minecraft公益粉丝服，我的世界同好交流社区。">
-    <meta property="og:image" content="http://81.70.42.92/static/image/nr_logo.png">
-    <meta property="og:url" content="https://81.70.42.92/">
-    <meta property="og:locale" content="zh_CN">
-
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: rgba(128, 128, 128, 0.3);
-            padding-top: 50px;
-        }
-
-        .index {
-            width: 100%;
-            height: 50px;
-            background: #f1f1f1;
-            position: fixed;
-            top: 0px;
-        }
-
-            .index ul {
-                display: flex;
-                list-style: none;
-                height: 50px;
-                align-items: center;
-                gap: 20px;
-                padding-left: 15px;
-            }
-
-        .index_text {
-            color: black;
-            font-weight: bold;
-            font-style: normal;
-            text-decoration-line: none;
-        }
-
-        #logo {
-            width: 40px;
-            padding-top: 3px;
-            padding-bottom: 0px;
-        }
-
         .empty {
             height: 600px;
         }
     </style>
 </head>
 <body>
-    <div class="index">
-        <ul>
-            <li>
-                <a href="home.html">
-                    <img id="logo" src="../static/image/nr_logo.png" alt="夜雨市logo">
-                </a>
-            </li>
-            <li><a class="index_text" href="home.html">首页</a></li>
-            <li><a class="index_text" href="https://docs.qq.com/aio/p/scdfxzjwuedj61p" target="_blank">Wiki</a></li>
-            <li><a class="index_text" href="home.html">活动</a></li>
-            <li><a class="index_text" href="home.html">赛事</a></li>
-            <li><a class="index_text" href="https://mgcraft.net" target="_blank">芒果方块官网</a></li>
-        </ul>
-    </div>
     <div>
+
+        {% include 'index.html' %}
+
         <h1>夜雨市欢迎您！</h1>
         <h2>网站建设中，敬请期待。。。</h2>
         <p>部分内容速览：</p>
