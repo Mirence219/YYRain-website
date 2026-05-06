@@ -28,11 +28,12 @@
     <Folder Include="website\static\image\" />
     <Folder Include="website\static\css\" />
     <Folder Include="website\static\js\" />
-    <Folder Include="website\template\" />
+    <Folder Include="website\templates\" />
     <Folder Include="website\static\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="website\template\home.html" />
+    <Content Include="website\static\image\nr_logo.png" />
+    <Content Include="website\templates\home.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
