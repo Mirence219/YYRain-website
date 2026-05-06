@@ -21,15 +21,52 @@
     padding-left: 15px;
     }
 
+.index li {
+    display:flex;
+}
+
+    .index div {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin: -10px;
+        height: 50px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        background: rgba(210, 210, 210, 0);
+        
+    }
+
+.index div:hover {
+    animation: index_hover 300ms ease 0s infinite;
+    animation-play-state:running;
+    animation-direction:alternate;
+}
+
+.index div:not(:hover) {
+    animation:none;
+}
+
+
+
 .index_text {
     color: black;
     font-weight: bold;
     font-style: normal;
     text-decoration-line: none;
+    line-height: 50px
 }
 
 #logo {
     width: 40px;
     padding-top: 3px;
     padding-bottom: 0px;
+}
+
+@keyframes index_hover{
+    from {
+        background: rgba(210, 210, 210, 0);
+    }
+    to {
+        background: rgba(210, 210, 210, 1);
+    }
 }

@@ -35,6 +35,7 @@
     <Content Include="website\static\css\body.css" />
     <Content Include="website\static\css\index.css" />
     <Content Include="website\static\css\text.css" />
+    <Content Include="website\static\image\background.webp" />
     <Content Include="website\static\image\nr_logo.png" />
     <Content Include="website\templates\base.html" />
     <Content Include="website\templates\competition.html" />

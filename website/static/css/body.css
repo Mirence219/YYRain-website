@@ -1,4 +1,22 @@
 body {
-    background: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.3);
+    background-repeat: repeat;
+    background-size:cover;
+    background-position:center center;
     padding-top: 50px;
 }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/static/image/background.webp");
+        background-size: cover;
+        /* 这里直接控制图片透明度！0-1之间，1=不透明，0=完全透明 */
+        opacity: 0.15;
+        /* 让图片层在所有内容的后面 */
+        z-index: -1;
+    }
