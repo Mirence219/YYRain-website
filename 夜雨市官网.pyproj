@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>夜雨市官网</Name>
     <RootNamespace>夜雨市官网</RootNamespace>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
