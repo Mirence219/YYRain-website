@@ -39,6 +39,7 @@
     <Content Include="website\static\image\background.webp" />
     <Content Include="website\static\image\nr_logo.png" />
     <Content Include="website\templates\base.html" />
+    <Content Include="website\templates\beian.html" />
     <Content Include="website\templates\competition.html" />
     <Content Include="website\templates\event.html" />
     <Content Include="website\templates\home.html" />
