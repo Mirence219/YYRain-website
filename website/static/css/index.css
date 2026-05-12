@@ -9,22 +9,27 @@
     height: 50px;
     background: #f1f1f1;
     position: fixed;
+    display: flex;
     top: 0px;
 }
 
-.index ul {
-    display: flex;
-    list-style: none;
-    height: 50px;
-    align-items: center;
-    gap: 20px;
-    padding-left: 15px;
+@media(min-width: 600px) {
+/*导航列表*/
+    .index ul { 
+        display: flex;
+        list-style: none;
+        height: 50px;
+        align-items: center;
+        gap: 20px;
+        padding-left: 15px;
     }
 
-.index li {
-    display:flex;
-}
+/*导航列表项*/
+    .index li {
+        display: flex;
+    }
 
+/*导航列表项的内容（用div包裹）*/
     .index div {
         padding-right: 10px;
         padding-left: 10px;
@@ -33,31 +38,35 @@
         flex-shrink: 0;
         flex-grow: 0;
         background: rgba(210, 210, 210, 0);
-        
     }
 
-.index div:hover {
-    animation: index_hover 300ms ease 0s infinite;
-    animation-play-state:running;
-    animation-direction:alternate;
+/*导航列表项的文字（用div包裹）*/
+    .index_text {
+        color: black;
+        font-weight: bold;
+        font-style: normal;
+        text-decoration-line: none;
+        line-height: 50px
+    }
 }
 
-.index div:not(:hover) {
-    animation:none;
-}
 
-.index_text {
-    color: black;
-    font-weight: bold;
-    font-style: normal;
-    text-decoration-line: none;
-    line-height: 50px
-}
 
 #logo {
     width: 40px;
-    padding-top: 3px;
-    padding-bottom: 0px;
+    margin-top: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.index div:hover {
+    animation: index_hover 300ms ease 0s infinite;
+    animation-play-state: running;
+    animation-direction: alternate;
+}
+
+.index div:not(:hover) {
+    animation: none;
 }
 
 @keyframes index_hover{
