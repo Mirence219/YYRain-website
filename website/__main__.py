@@ -15,6 +15,10 @@ def event():
 def competition():
     return render_template("competition.html")
 
+@app.route('/wiki')
+def wiki():
+    return render_template("wiki.html")
+
 
 
 if __name__ == "__main__":
