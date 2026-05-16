@@ -7,7 +7,7 @@
 }
 
 .total_index {
-    z-index:100;
+    z-index:0;
 }
 
 .index {
@@ -17,6 +17,12 @@
     position: fixed;
     display: flex;
     top: 0px;
+    z-index:1;
+}
+
+#menu_checkbox {
+    display: none;
+    position: fixed;
 }
 
 @media(min-width: 600px) {
@@ -78,6 +84,7 @@
         transition: all 0.3s ease;
         align-items: center;
         justify-content: center;
+        z-index: 1;
     }
 
     /*移动端导航列表*/
@@ -87,6 +94,8 @@
         background-color: #f1f1f1;
         top: -250px;
         width: 100%;
+        transition: top 0.3s ease;
+        z-index: 0;
     }
 
     .menu.mobile ul{
@@ -124,16 +133,16 @@
         line-height: 50px
     }
 
-    #menu:hover {
+    #menu_checkbox:checked ~ #menu {
         transform:rotate(90deg);
     }
 
-    #menu:hover ~ .menu.mobile {
+/*    #menu:hover ~ .menu.mobile {
         top:50px;
-    }
+    }*/
 
-    .menu.mobile:hover {
-        top: 50px;
+    #menu_checkbox:checked ~ .menu.mobile{
+        top:50px;
     }
 }
 
@@ -144,6 +153,7 @@
     margin-top: 4px;
     margin-left: 8px;
     margin-right: 8px;
+    z-index: 1;
 }
 
 .menu_project:hover {
