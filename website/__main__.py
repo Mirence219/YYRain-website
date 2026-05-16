@@ -27,7 +27,6 @@ DEBUG_MODE = os.getenv("Debug", "false") == "true"
 
 
 if __name__ == "__main__":
-    print(DEBUG_MODE)
     if DEBUG_MODE:
         print("【当前处于调试状态】")
         host = "0.0.0.0"
