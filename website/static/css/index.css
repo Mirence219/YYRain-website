@@ -55,6 +55,7 @@
         flex-grow: 0;
         background: rgba(210, 210, 210, 0);
         text-decoration-line:none;
+        transition:background 0.3s ease;
     }
 
 /*桌面端导航列表项的文字*/
@@ -121,6 +122,7 @@
         flex-grow: 0;
         background: rgba(210, 210, 210, 0);
         text-decoration-line: none;
+        transition: background 0.3s ease;
     }
 
     /*移动端导航列表项的文字*/
@@ -157,9 +159,7 @@
 }
 
 .menu_project:hover {
-    animation: menu_hover 300ms ease 0s infinite;
-    animation-play-state: running;
-    animation-direction: alternate;
+    background: rgba(210, 210, 210, 1)
 }
 
 .menu_project:not(:hover) {

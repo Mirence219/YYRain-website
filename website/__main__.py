@@ -20,6 +20,10 @@ def competition():
 def wiki():
     return render_template("wiki.html")
 
+@app.route('/git')
+def git():
+    return 
+
 DEBUG_MODE = os.getenv("Debug", "false") == "true"
 
 
