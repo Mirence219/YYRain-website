@@ -7,7 +7,7 @@
 }
 
 .total_index {
-    z-index:0;
+    z-index: 0;
 }
 
 .index {
@@ -17,7 +17,7 @@
     position: fixed;
     display: flex;
     top: 0px;
-    z-index:1;
+    z-index: 1;
 }
 
 #menu_checkbox {
@@ -56,6 +56,7 @@
         background: rgba(210, 210, 210, 0);
         text-decoration-line:none;
         transition:background 0.3s ease;
+        position:relative;
     }
 
 /*桌面端导航列表项的文字*/
@@ -64,7 +65,8 @@
         font-weight: bold;
         font-style: normal;
         text-decoration-line: none;
-        line-height: 50px
+        line-height: 50px;
+        transition: all 0.3s ease;
     }
 }
 
@@ -158,32 +160,35 @@
     z-index: 1;
 }
 
+#mgcraft_logo {
+    width: 40px;
+    position: absolute;
+    left: 23px;
+    top: 7px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
 .menu_project:hover {
-    background: rgba(210, 210, 210, 1)
+    background: rgba(210, 210, 210, 0.5)
 }
 
-.menu_project:not(:hover) {
-    animation: none;
+.menu_project.mgcraft_link:hover {
+    background: rgb(255, 174, 0, 0.3);
 }
 
-
-
-
-
-@keyframes menu_hover{
-    from {
-        background: rgba(210, 210, 210, 0);
-    }
-    to {
-        background: rgba(210, 210, 210, 1);
-    }
+.menu_project.mgcraft_link:hover .menu_text.mgcraft_link {
+    color: rgb(14, 208, 145);
 }
 
-@keyframes mobile_menu{
-    from {
-        top:-250px;
-    }
-    to{
-        top:50px;
-    }
+.menu_project.mgcraft_link:hover .menu_text.mgcraft_link.mgcraft {
+    opacity: 0;
 }
+
+.menu_project.mgcraft_link:hover #mgcraft_logo {
+    opacity: 1;
+    width: 50px;    
+    left: 18px;
+    top: 2px;
+}
+

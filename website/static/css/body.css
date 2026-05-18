@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(245, 245, 245);
     background-repeat: repeat;
     background-size: cover;
     background-position: center center;
@@ -16,7 +16,18 @@ body::before {
     background-image: url("/static/image/background.webp");
     background-position: center center;
     background-size: cover;
-    opacity: 0.2;
+    opacity: 0.1;
     z-index: -1;
     filter: brightness(0.5);
+    animation: bg_display_animation ease 2s 0s 1;
+}
+
+@keyframes bg_display_animation {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 0.1
+    }
+    
 }
