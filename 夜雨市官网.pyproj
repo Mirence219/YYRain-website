@@ -29,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="website\" />
+    <Folder Include="website\static\font\" />
     <Folder Include="website\static\image\" />
     <Folder Include="website\static\css\" />
     <Folder Include="website\static\js\" />
@@ -39,8 +40,21 @@
     <Content Include="website\static\css\body.css" />
     <Content Include="website\static\css\index.css" />
     <Content Include="website\static\css\text.css" />
+    <Content Include="website\static\font\demo.css" />
+    <Content Include="website\static\font\demo_index.html" />
+    <Content Include="website\static\font\iconfont.css" />
+    <Content Include="website\static\font\iconfont.js" />
+    <Content Include="website\static\font\iconfont.json" />
+    <Content Include="website\static\font\iconfont.ttf" />
+    <Content Include="website\static\font\iconfont.woff" />
+    <Content Include="website\static\font\iconfont.woff2" />
     <Content Include="website\static\image\background.webp" />
+    <Content Include="website\static\image\event_logo.png" />
+    <Content Include="website\static\image\mgcraft_logo.png" />
+    <Content Include="website\static\image\nrl_logo.png" />
     <Content Include="website\static\image\nr_logo.png" />
+    <Content Include="website\static\image\nr_logo2.png" />
+    <Content Include="website\static\image\wiki_logo.png" />
     <Content Include="website\templates\base.html" />
     <Content Include="website\templates\beian.html" />
     <Content Include="website\templates\competition.html" />

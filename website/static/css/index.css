@@ -59,6 +59,19 @@
         position:relative;
     }
 
+/*桌面端导航列表项目图片*/
+    .menu_project > .menu_img {
+        position: absolute;
+        width: 20px;
+        opacity: 0;
+        left: 15px;
+        top: -30px;
+        transition: all ease 0.3s;
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
+
+
 /*桌面端导航列表项的文字*/
     .menu_text {
         color: black;
@@ -179,6 +192,8 @@
 
 .menu_project.mgcraft_link:hover .menu_text.mgcraft_link {
     color: rgb(14, 208, 145);
+    font-size: 18px;
+    text-indent: -10px;
 }
 
 .menu_project.mgcraft_link:hover .menu_text.mgcraft_link.mgcraft {
@@ -192,3 +207,32 @@
     top: 2px;
 }
 
+.menu_project:hover .menu_img {
+    opacity: 1;
+    width: 35px;
+    top: 0;
+    left: 7.5px;
+}
+
+.menu_project:hover .normal_link {
+    line-height: 75px;
+    font-size: 13px;
+    letter-spacing:3px;
+}
+
+.menu_project:hover .home_link {
+    color: purple;
+}
+
+.menu_project:hover .wiki_link {
+    letter-spacing: 1.6px;
+    color: blue;
+}
+
+.menu_project:hover .event_link {
+    color: green;
+}
+
+.menu_project:hover .compeition_link{
+    color: red;
+}
