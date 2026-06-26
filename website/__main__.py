@@ -24,7 +24,7 @@ def wiki():
 def git():
     return 
 
-DEBUG_MODE = os.getenv("Debug", "false") == "true"
+DEBUG_MODE = os.getenv("debug", "false") == "true"
 
 
 
