@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="website\static\css\body.css" />
+    <Content Include="website\static\css\home.css" />
     <Content Include="website\static\css\index.css" />
     <Content Include="website\static\css\text.css" />
     <Content Include="website\static\font\demo.css" />

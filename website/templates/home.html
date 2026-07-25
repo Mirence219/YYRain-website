@@ -4,20 +4,6 @@
     <meta charset="utf-8" />
     {% include 'base.html' %}
     <title>夜雨市 | 芒果方块粉丝服</title>
-    <style>
-        .empty {
-            height: 600px;
-        }
-        
-        .jieshao {
-            text-align: center;
-        }
-        
-        .text {
-            text-indent: 2em;
-            padding: 5px;
-        }
-    </style>
 </head>
 <body>
     <div>
@@ -27,13 +13,23 @@
         <h1>夜雨市欢迎您！</h1>
         <h2>网站建设中，敬请期待。。。</h2>
         <!--最新帖子-->
-        <div class="notice_board lastest_posts">    
+        <div class="notice_board lastest_posts">
             
+        </div>
+        <div class="video_and_news_box">
+            <div class="video_box">
+                <iframe id="video"
+                        src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1y3jE6vE4Z&cid=39256264350&p=1"
+                        scrolling="no"
+                        allowfullscreen">
+                </iframe>
+            </div>
+            <div class="news_box">
+                这是帖子容器
+            </div>
         </div>
         <h3 class="jieshao">组织介绍</h3>
         <p class="text">夜雨市是芒果方块Minecraft纯公益粉丝服的生电组织之一，是服务器里兼具颜值与实用性的综合性组织。我们拒绝枯燥的单机玩法，主打温馨社群+硬核技术+美学创作三重体验，打造让每一位成员都有归属感的游戏家园。</p>
-        <br />
-        <br />
         <p>部分内容速览：</p>
         <ul>
             <li><a href="https://docs.qq.com/aio/p/scdfxzjwuedj61p" target="_blank">夜雨市组织综合指南（腾讯文档）</a></li>
