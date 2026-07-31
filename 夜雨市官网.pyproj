@@ -58,6 +58,7 @@
     <Content Include="website\static\image\nr_logo.png" />
     <Content Include="website\static\image\nr_logo2.png" />
     <Content Include="website\static\image\wiki_logo.png" />
+    <Content Include="website\static\js\home.js" />
     <Content Include="website\static\js\test.js" />
     <Content Include="website\static\svg\board.svg" />
     <Content Include="website\templates\base.html" />

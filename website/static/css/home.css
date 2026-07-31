@@ -12,18 +12,65 @@
     margin-bottom: 5px;
 }
 
+.box:hover {
+    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+/*通用按钮样式*/
+.button {
+    cursor: pointer;
+    border: none;
+}
+
+/*通用文本样式*/
+.text {
+    cursor: default;
+}
+
+/*通用列表样式*/
+.list {
+    list-style: none;
+}
+
 .title {
     text-align: center;
 }
 
 /*组织简介卡片*/
 #org_introduction {
-    
+    display: flex;
+    margin: 15px;
 }
 
 /*首行卡片组*/
 #video_and_news_frame {
     display: flex;
+}
+
+/*帖子/公告卡片*/
+#news_box {
+    width: 28%;
+    margin: 15px auto;
+    color: black;
+}
+
+#news_box ul {
+    margin: 5px;
+}
+
+.news_button {
+    transition: all 0.1s ease;
+    background: rgba(200, 200, 200, 0);
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+    display:block;
+}
+
+.news_button:hover {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 /*视频卡片*/
@@ -32,16 +79,8 @@
     width: 68%;
     aspect-ratio: 24/9;
     color: black;
-    padding: 10px;
-    margin: 15px auto; 
-    align-items: center;
-}
-
-/*帖子/公告卡片*/
-#news_box {
-    width: 28%;
+    padding: 5px;
     margin: 15px auto;
-    color: black;
 }
 
 /*视频窗口包裹*/
@@ -60,64 +99,99 @@
 
 /*内嵌B站视频*/
 #video {
+    display: flex;
     border: none;
-    height: 100%;
+    width: 100%;
     aspect-ratio: 16/9;
-
+    align-items: center;
 }
 
 /*视频选择器*/
-#video_selector {
-    margin:5px;
+#video_list {
+    margin: 10px;
+    width: 40%;
+    align-items: flex-start;
 }
 
-/*帖子/公告卡片动画*/
-.news_box:hover {
-    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+#video_list ul {
+    margin: 5px;
 }
+
+.video_button {
+    transition: all 0.15s ease;
+    background: rgba(200, 200, 200, 0);
+    align-self:flex-start;
+    margin-bottom: 5px;
+}
+
+.video_button:hover {
+    background: rgba(200, 200, 200, 0.5);
+    font-size: 18px;
+    font-weight: 500;
+    color: red;
+}
+
+
 
 /*入口卡片*/
 #entrance ul {
     display: flex;
     margin: 0;
     padding: 0;
-    list-style: none;
-    gap: 16px;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
 /*入口按钮*/
-#entrance_button {
+.entrance_button {
     position: relative;
-    width: 80px;
-    height: 80px;
+    display: flex;
+    width: 100px;
+    height: 100px;
     top: 0px;
+    text-decoration: none;
+    border-radius: 10px;
 }
 
-#entrance_button:hover {
+.entrance_button:hover {
     box-shadow: 0 10px 26px rgba(0,0,0,0.35);
     top: -5px;
     background: #d8fdff;
 }
+
 
 .empty {
     height: 600px;
 }
 
 
-.text {
+/*.text {
     text-indent: 2em;
     padding: 5px;
-}
+}*/
+
+
+
 
 
 /*移动端适配*/
-@media(max-width:600px) {
+@media(max-width:768px) {
     #video_and_news_frame {
         display: block;
     }
 
     #video_box {
         width: 96%;
+        display: block;
+    }
+
+    #video_window {
+        width: 100%;
+        margin: 0px;
+    }
+
+    #video_list {
+        width: 100%;
     }
 
     #news_box {
