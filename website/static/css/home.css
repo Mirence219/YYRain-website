@@ -1,70 +1,128 @@
-.video_and_news_box {
-    display: flex;
-}
-
-.video_box {
-    width: 48%;
-    aspect-ratio: 16/9;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background: black;
-    color: black;
-    padding: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transition: box-shadow 0.3s ease;
-    margin: 15px auto;
-    align-items: center;
-    justify-content: center;
-}
-
-.news_box {
-    width: 48%;
-    aspect-ratio: 16/9;
+/*通用圆角矩形容器样式*/
+.box {
     box-sizing: border-box;
     border-radius: 20px;
     background: white;
     color: black;
-    padding: 10px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transition: box-shadow 0.3s ease;
-    margin: 15px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-@media(max-width:600px) {
-    .video_and_news_box {
-        display: block;
-    }
-
-    .video_box {
-        width: 96%;
-        background: black;
-    }
-
-    .news_box {
-        width: 96%;
-        display: block;
-    }
+.title {
+    text-align: center;
 }
 
+/*组织简介卡片*/
+#org_introduction {
+    
+}
+
+/*首行卡片组*/
+#video_and_news_frame {
+    display: flex;
+}
+
+/*视频卡片*/
+#video_box {
+    display: flex;
+    width: 68%;
+    aspect-ratio: 24/9;
+    color: black;
+    padding: 10px;
+    margin: 15px auto; 
+    align-items: center;
+}
+
+/*帖子/公告卡片*/
+#news_box {
+    width: 28%;
+    margin: 15px auto;
+    color: black;
+}
+
+/*视频窗口包裹*/
+#video_window {
+    background: black;
+    width: 60%;
+    aspect-ratio: 16/9;
+    padding: 0px;
+    margin: 5px;
+    /*以自身蒙版限制iframe*/
+    -webkit-mask-image: linear-gradient(#fff, #fff);
+    -webkit-mask-clip: padding-box;
+    mask-image: linear-gradient(#fff, #fff);
+    border-radius: 16px;
+}
+
+/*内嵌B站视频*/
+#video {
+    border: none;
+    height: 100%;
+    aspect-ratio: 16/9;
+
+}
+
+/*视频选择器*/
+#video_selector {
+    margin:5px;
+}
+
+/*帖子/公告卡片动画*/
 .news_box:hover {
     box-shadow: 0 10px 26px rgba(0,0,0,0.35);
 }
 
-#video {
-    border:none;
-    width:100%;
-    aspect-ratio:16/9;
+/*入口卡片*/
+#entrance ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 16px;
+}
+
+/*入口按钮*/
+#entrance_button {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    top: 0px;
+}
+
+#entrance_button:hover {
+    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+    top: -5px;
+    background: #d8fdff;
 }
 
 .empty {
     height: 600px;
 }
 
-.jieshao {
-    text-align: center;
-}
 
 .text {
     text-indent: 2em;
     padding: 5px;
 }
+
+
+/*移动端适配*/
+@media(max-width:600px) {
+    #video_and_news_frame {
+        display: block;
+    }
+
+    #video_box {
+        width: 96%;
+    }
+
+    #news_box {
+        width: 96%;
+        display: block;
+    }
+}
+

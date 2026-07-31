@@ -6,48 +6,76 @@
     <title>夜雨市 | 芒果方块粉丝服</title>
 </head>
 <body>
-    <div>
+    {% include 'index.html' %}
 
-        {% include 'index.html' %}
-
+    <!--组织简介-->
+    <div id="org_introduction">
         <h1>夜雨市欢迎您！</h1>
         <h2>网站建设中，敬请期待。。。</h2>
-        <!--最新帖子-->
-        <div class="notice_board lastest_posts">
-            
+        <div class="box">
+            <h3 class="title">组织介绍</h3>
+            <p>夜雨市是芒果方块Minecraft纯公益粉丝服的生电组织之一，是服务器里兼具颜值与实用性的综合性组织。我们拒绝枯燥的单机玩法，主打温馨社群+硬核技术+美学创作三重体验，打造让每一位成员都有归属感的游戏家园。</p>
         </div>
-        <div class="video_and_news_box">
-            <div class="video_box">
+    </div>
+            
+    <!--首行卡片组-->
+    <div id="video_and_news_frame">
+        <!--视频板块-->
+        <div id="video_box" class="box">
+            <div id="video_window" class="box">
                 <iframe id="video"
                         src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1y3jE6vE4Z&cid=39256264350&p=1"
                         scrolling="no"
-                        allowfullscreen">
+                        allowfullscreen>
                 </iframe>
             </div>
-            <div class="news_box">
-                这是帖子容器
+            <div id="video_selector" class="selector">
+                这是视频选择器
             </div>
         </div>
-        <h3 class="jieshao">组织介绍</h3>
-        <p class="text">夜雨市是芒果方块Minecraft纯公益粉丝服的生电组织之一，是服务器里兼具颜值与实用性的综合性组织。我们拒绝枯燥的单机玩法，主打温馨社群+硬核技术+美学创作三重体验，打造让每一位成员都有归属感的游戏家园。</p>
-        <p>部分内容速览：</p>
-        <ul>
-            <li><a href="https://docs.qq.com/aio/p/scdfxzjwuedj61p" target="_blank">夜雨市组织综合指南（腾讯文档）</a></li>
-            <li><a href="https://docs.qq.com/aio/DQmpHdU91cGNQWmhm" target="_blank">芒果方块粉丝服指南（腾讯文档）</a></li>
-            <li><a href="http://map.mangocraft.cn:2087/#world:-17786:58:15258:198:0.77:0.68:0:0:perspective" target="_blank">芒果方块粉丝服在线地图</a></li>
-            <li><a href="https://space.bilibili.com/667186816" target="_blank">Mience的B站个人空间）</a></li>
-            <li><a href="https://space.bilibili.com/23240466" target="_blank">芒果方块的B站个人空间</a></li>
-        </ul>
-        <br />
-        <p>夜雨市部分建筑/机器投稿视频：</p>
-        <ul>
-            <li><a href="https://www.bilibili.com/video/BV1eap6eXEhH" target="_blank">【MC】服务器生存 海平面4500火药塔建造</a></li>
-            <li><a href="https://www.bilibili.com/video/BV1QyWzeUE8N" target="_blank">【MC】服务器生存 我把320熔炉组魔改成了640？魔改版640速高速熔炉建造过程</a></li>
-            <li><a href="https://www.bilibili.com/video/BV1CoRdYCESA" target="_blank">【Minecraft】服务器生存 我在原版生存下用了近半年造了一座奇观！</a></li>
-            <li><a href="https://www.bilibili.com/video/BV1y3jE6vE4Z" target="_blank">《二联海货塔是怎样炼成的》（芒果方块联投）</a></li>
-        </ul>
-        <p class="tip">夜雨市是个很棒的组织！</p>
+        <!--帖子/公告板块-->
+        <div id="news_box" class="box">
+            这是帖子公告栏
+        </div>
     </div>
+
+    <div id="entrance" class="box">
+        这是入口区域
+        <ul>
+            <li>
+                <div id="entrance_button" class="box">1</div>
+            </li>
+            <li>
+                <div id="entrance_button" class="box">2</div>
+            </li>
+            <li>
+                <div id="entrance_button" class="box">3</div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+        
+    <p>部分内容速览：</p>
+    <ul>
+        <li><a href="https://docs.qq.com/aio/p/scdfxzjwuedj61p" target="_blank">夜雨市组织综合指南（腾讯文档）</a></li>
+        <li><a href="https://docs.qq.com/aio/DQmpHdU91cGNQWmhm" target="_blank">芒果方块粉丝服指南（腾讯文档）</a></li>
+        <li><a href="http://map.mangocraft.cn:2087/#world:-17786:58:15258:198:0.77:0.68:0:0:perspective" target="_blank">芒果方块粉丝服在线地图</a></li>
+        <li><a href="https://space.bilibili.com/667186816" target="_blank">Mience的B站个人空间）</a></li>
+        <li><a href="https://space.bilibili.com/23240466" target="_blank">芒果方块的B站个人空间</a></li>
+    </ul>
+    <br />
+    <p>夜雨市部分建筑/机器投稿视频：</p>
+    <ul>
+        <li><a href="https://www.bilibili.com/video/BV1eap6eXEhH" target="_blank">【MC】服务器生存 海平面4500火药塔建造</a></li>
+        <li><a href="https://www.bilibili.com/video/BV1QyWzeUE8N" target="_blank">【MC】服务器生存 我把320熔炉组魔改成了640？魔改版640速高速熔炉建造过程</a></li>
+        <li><a href="https://www.bilibili.com/video/BV1CoRdYCESA" target="_blank">【Minecraft】服务器生存 我在原版生存下用了近半年造了一座奇观！</a></li>
+        <li><a href="https://www.bilibili.com/video/BV1y3jE6vE4Z" target="_blank">《二联海货塔是怎样炼成的》（芒果方块联投）</a></li>
+    </ul>
+    <p class="tip">夜雨市是个很棒的组织！</p>
 
     {% include 'beian.html' %}
 
