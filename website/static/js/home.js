@@ -1,4 +1,4 @@
-class VideoSelector {
+export default class VideoSelector {
   constructor(playerSelector) {
     this.playerSelector = "#video";
     this.playerEl = null;
@@ -43,7 +43,3 @@ class VideoSelector {
   }
 }
 
-// =========使用流程========
-const videoBox = new VideoSelector("#videoPlayer");
-videoBox.init();                // DOM查找元素
-videoBox.bindButtons(".video_button"); // 绑定点击

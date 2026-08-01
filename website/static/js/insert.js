@@ -1,3 +1,9 @@
+import VideoSelector from "./home.js"
+
+const videoBox = new VideoSelector("#videoPlayer");
+
+console.log("123")
+
 document.addEventListener('DOMContentLoaded', function () {
     // ========== 视频列表 ==========
     axios.get("/api/video/all")
@@ -5,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('视频数据接收成功：', res.data);
         const videoArr = res.data;
         const wrapDom = document.getElementById("video_list_wrap");
+        const playerEI = document.querySelector("#video")
+        let flag = false;
         let htmlStr = "";
 
         videoArr.forEach(item => {
@@ -22,14 +30,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="${classList}" data-src="${item.iframe_url}">${item.name}</div>
                 </li>
             `;
+            if (!flag){
+                playerEI.src = item.iframe_url;
+                flag = true;
+            }
+            console.log('节目单构建完成');
         });
+
+        queueMicrotask(() => {
+            videoBox.init();                // DOM查找元素
+            videoBox.bindButtons(".video_button"); // 绑定点击
+        });
+        
 
         wrapDom.innerHTML = htmlStr || "<li>暂无节目数据</li>";
     })
     .catch(err => {
         console.error("视频加载失败：", err);
         const wrapDom = document.getElementById("video_list_wrap");
-        wrapDom.innerHTML = "<li>网络异常，连接不到后端服务器</li>";
+        wrapDom.innerHTML = "<li>连接服务器异常</li>";
     });
 
     // ========== 公告列表 ==========
@@ -65,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(err => {
         console.error("公告加载失败：", err);
         const wrapDom = document.getElementById("news_list_wrap");
-        wrapDom.innerHTML = "<li>网络异常，连接不到后端服务器</li>";
+        wrapDom.innerHTML = "<li>连接服务器异常</li>";
     });
+
 });

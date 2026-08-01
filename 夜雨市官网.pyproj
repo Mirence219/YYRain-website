@@ -53,6 +53,7 @@
   <ItemGroup>
     <Content Include="LICENSE" />
     <Content Include="README.md" />
+    <Content Include="sync_db.sh" />
     <Content Include="website\static\css\beian.css" />
     <Content Include="website\static\css\body.css" />
     <Content Include="website\static\css\home.css" />
