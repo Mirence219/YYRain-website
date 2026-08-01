@@ -2,3 +2,50 @@
     content: "✨"; /* 自动在文字前面加个星星 */
     margin-right: 4px;
 }
+
+/* 置顶：前置「置顶」 */
+.top_news::before {
+    content: "顶";
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #f5222d;
+    margin-right: 4px;
+}
+
+.top_video::before {
+    content: "顶";
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #5db3f3;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+/* 新公告：前置「新」 */
+.newest_news::before {
+    content: "新";
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #f5222d;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.newest_video::before {
+    content: "新";
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #5db3f3;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+/* 火热公告：前置「热」 */
+.hot_news::before {
+    content: "热";
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #f5222d;
+    margin-right: 4px;
+    vertical-align: middle;
+}

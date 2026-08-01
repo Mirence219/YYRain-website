@@ -6,6 +6,7 @@
     <title>夜雨市 | 芒果方块粉丝服</title>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     {% include 'index.html' %}
 
     <!--组织简介-->
@@ -14,7 +15,7 @@
             <h1>夜雨市欢迎您！</h1>
             <h2>网站建设中，敬请期待。。。</h2>
         </div>
-        
+
         <div class="box">
             <h3 class="title">组织介绍</h3>
             <p>夜雨市是芒果方块Minecraft纯公益粉丝服的生电组织之一，是服务器里兼具颜值与实用性的综合性组织。我们拒绝枯燥的单机玩法，主打温馨社群+硬核技术+美学创作三重体验，打造让每一位成员都有归属感的游戏家园。</p>
@@ -35,47 +36,21 @@
             </div>
             <div id="video_list">
                 <h3>节目选择</h3>
-                <ul class="list">
-                    <li>
-                        <div class="video_button button" data-src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1y3jE6vE4Z&cid=39256264350&p=1">《二联海货塔是怎样炼成的》（芒果方块联投）</div>
-                    </li>
-                    <li>
-                        <div class="video_button button" data-src="//player.bilibili.com/player.html?isOutside=true&aid=114285556532240&bvid=BV1CoRdYCESA&cid=29250816321&p=1">【Minecraft】服务器生存 我在原版生存下用了近半年造了一座奇观！</div>
-                    </li>
-                    <li>
-                        <div class="video_button button" data-src="//player.bilibili.com/player.html?isOutside=true&aid=113021963732092&bvid=BV1QyWzeUE8N&cid=500001661974794&p=1">【MC】服务器生存 我把320熔炉组魔改成了640？魔改版640速高速熔炉建造过程</div>
-                    </li>
-                    <li>
-                        <div class="video_button button" data-src="//player.bilibili.com/player.html?isOutside=true&aid=112984013670422&bvid=BV1eap6eXEhH&cid=500001654016511&p=1">【MC】服务器生存 海平面4500火药塔建造</div>
-                    </li>
+                <ul class="list" id="video_list_wrap">
+                    节目加载中。。。
+                    <!-- JS动态渲染填充内容-->
                 </ul>
             </div>
         </div>
         <!--帖子/公告板块-->
         <div id="news_box" class="box">
             <h3>公告栏</h3>
-            <ul class="list">
-                <li>
-                    <a class="news_button button" href="https://pd.qq.com/s/1xmlocd3h">夜雨市3号工程一期工程已完成！</a>
-                </li>
-                <hr>
-                <li>
-                    <a class="news_button button" href="https://pd.qq.com/s/blxknval9">倒计时7天！定档6月20日端午专场！</a>
-                </li>
-                <hr>
-                <li>
-                    <a class="news_button button" href="https://pd.qq.com/s/ff7pcgn2q">【新网站】夜雨市组织官网正式对外开放啦！</a>
-                </li>
-                <hr>
-                <li>
-                    <a class="news_button button" href="https://pd.qq.com/s/fevbz6grb">瀚海商宫元宵活动第二届「猜驼谜」盛会 已盛大开启！</a>
-                </li>
-                <hr>
-                <li>
-                    <a class="news_button button" href="https://pd.qq.com/s/3tdwnoyvy">【新机器】夜雨市370w二联海货塔 已正式投入使用！</a>
-                </li>
+            <ul class="list" id="news_list_wrap">
+                公告加载中。。。
+                <!-- JS动态渲染填充内容-->
             </ul>
         </div>
+        </script>
     </div>
 
     <div id="entrance" class="box text">
@@ -100,6 +75,7 @@
     </div>
     {% include 'beian.html' %}
 
+    <script src="static/js/insert.js"></script>
     <script src="static/js/home.js"></script>
 </body>
 </html>

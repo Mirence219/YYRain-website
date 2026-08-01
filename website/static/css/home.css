@@ -42,6 +42,15 @@
     margin: 15px;
 }
 
+#org_introduction p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #222222;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.3px;
+}
+
 /*首行卡片组*/
 #video_and_news_frame {
     display: flex;
@@ -77,7 +86,7 @@
 #video_box {
     display: flex;
     width: 68%;
-    aspect-ratio: 24/9;
+    /*aspect-ratio: 24/9;*/
     color: black;
     padding: 5px;
     margin: 15px auto;
@@ -90,6 +99,9 @@
     aspect-ratio: 16/9;
     padding: 0px;
     margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /*以自身蒙版限制iframe*/
     -webkit-mask-image: linear-gradient(#fff, #fff);
     -webkit-mask-clip: padding-box;
@@ -104,13 +116,19 @@
     width: 100%;
     aspect-ratio: 16/9;
     align-items: center;
+    /* 移除定位偏移，交由父容器居中 */
 }
 
 /*视频选择器*/
 #video_list {
     margin: 10px;
     width: 40%;
-    align-items: flex-start;
+    align-items: flex-start; 
+    /*以自身蒙版限制iframe*/
+    -webkit-mask-image: linear-gradient(#fff, #fff);
+    -webkit-mask-clip: padding-box;
+    mask-image: linear-gradient(#fff, #fff);
+    border-radius: 16px;
 }
 
 #video_list ul {
@@ -134,20 +152,27 @@
 
 
 /*入口卡片*/
+#entrance {
+    display: block;
+}
+
 #entrance ul {
     display: flex;
-    margin: 0;
+    width: calc(100% - 20px);
+    margin: 10px;
     padding: 0;
     gap: 5px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /*入口按钮*/
 .entrance_button {
     position: relative;
+    align-items: center;
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     top: 0px;
     text-decoration: none;
     border-radius: 10px;
@@ -186,12 +211,14 @@
     }
 
     #video_window {
-        width: 100%;
-        margin: 0px;
+        /* 防止 width:100% 与外边距合计超出父容器导致偏移 */
+        width: calc(100% - 10px);
+        margin: 5px auto;
+        box-sizing: border-box;
     }
 
     #video_list {
-        width: 100%;
+        width: calc(100% - 20px);
     }
 
     #news_box {

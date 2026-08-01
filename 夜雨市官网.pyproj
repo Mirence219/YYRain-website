@@ -25,10 +25,23 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="website\src\constants.py" />
+    <Compile Include="website\src\db_modle.py" />
+    <Compile Include="website\src\logger.py" />
+    <Compile Include="website\src\view\competition_view.py" />
+    <Compile Include="website\src\db_factory.py" />
+    <Compile Include="website\src\view\event_view.py" />
+    <Compile Include="website\src\view\home_view.py" />
+    <Compile Include="website\src\view\wiki_view.py" />
+    <Compile Include="website\src\view\__init__.py" />
+    <Compile Include="website\src\__version__.py" />
+    <Compile Include="website\web_app.py" />
     <Compile Include="website\__main__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="website\src\" />
     <Folder Include="website\" />
+    <Folder Include="website\src\view\" />
     <Folder Include="website\static\font\" />
     <Folder Include="website\static\image\" />
     <Folder Include="website\static\css\" />
@@ -61,6 +74,7 @@
     <Content Include="website\static\image\nr_logo2.png" />
     <Content Include="website\static\image\wiki_logo.png" />
     <Content Include="website\static\js\home.js" />
+    <Content Include="website\static\js\insert.js" />
     <Content Include="website\static\js\test.js" />
     <Content Include="website\static\svg\board.svg" />
     <Content Include="website\templates\base.html" />

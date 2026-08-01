@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 *.slnx
+*.db
+*.sqbpro
