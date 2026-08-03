@@ -1,88 +1,91 @@
 import VideoSelector from "./home.js"
 
-const videoBox = new VideoSelector("#videoPlayer");
+const video_box = new VideoSelector("#videoPlayer");
+const news_count = 6;
 
 document.addEventListener('DOMContentLoaded', function () {
     // ========== 视频列表 ==========
     axios.get("/api/video/all")
     .then(res => {
         console.log('视频数据接收成功：', res.data);
-        const videoArr = res.data;
-        const wrapDom = document.getElementById("video_list_wrap");
-        const playerEI = document.querySelector("#video")
+        const video_arr = res.data;
+        const wrap_dom = document.getElementById("video_list_wrap");
+        const player_el = document.querySelector("#video");
         let flag = false;
-        let htmlStr = "";
+        let html_str = "";
 
-        videoArr.forEach(item => {
-            let classList = "video_button button";
+        video_arr.forEach(item => {
+            let class_list = "video_button button";
 
             if (Number(item.sort_order) > 0) {
-                classList += " top_video";
+                class_list += " top_video";
             }
             if (item.is_newest == 1) {
-                classList += " newest_video";
+                class_list += " newest_video";
             }
 
-            htmlStr += `
+            html_str += `
                 <li>
-                    <div class="${classList}" data-src="${item.iframe_url}">${item.name}</div>
+                    <div class="${class_list}" data-src="${item.iframe_url}">${item.name}</div>
                 </li>
             `;
             if (!flag){
-                playerEI.src = item.iframe_url;
+                player_el.src = item.iframe_url;
                 flag = true;
             }
             console.log('节目单构建完成');
         });
 
         queueMicrotask(() => {
-            videoBox.init();                // DOM查找元素
-            videoBox.bindButtons(".video_button"); // 绑定点击
+            video_box.init();                // DOM查找元素
+            video_box.bind_buttons(".video_button"); // 绑定点击
         });
         
 
-        wrapDom.innerHTML = htmlStr || "<li>暂无节目数据</li>";
+        wrap_dom.innerHTML = html_str || "<li>暂无节目数据</li>";
     })
     .catch(err => {
         console.error("视频加载失败：", err);
-        const wrapDom = document.getElementById("video_list_wrap");
-        wrapDom.innerHTML = "<li>连接服务器异常</li>";
+        const wrap_dom = document.getElementById("video_list_wrap");
+        wrap_dom.innerHTML = "<li>连接服务器异常</li>";
     });
 
     // ========== 公告列表 ==========
-    axios.get("/api/news/all")
+    axios.get("/api/news", {
+        params: { page: 1, size: news_count }
+    })
     .then(res => {
         console.log('公告数据接收成功：', res.data);
-        const newsArr = res.data;
-        const wrapDom = document.getElementById("news_list_wrap");
-        let htmlStr = "";
+        const news_arr = res.data.data;
+        const wrap_dom = document.getElementById("news_list_wrap");
+        let html_str = "";
 
-        newsArr.forEach(item => {
-            let classList = "news_button button";
+        news_arr.forEach(item => {
+            let class_list = "news_button button";
             if (item.is_newest == 1) {
-                classList += " newest_news";
+                class_list += " newest_news";
             }
             if (item.is_hot == 1) {
-                classList += " hot_news";
+                class_list += " hot_news";
             }
             if (Number(item.sort_order) > 0) {
-                classList += " top_news";
+                class_list += " top_news";
             }
 
-            htmlStr += `
+            html_str += `
                 <li>
-                    <a class="${classList}" href="${item.url}" target="_blank">${item.name}</a>
+                    <a class="${class_list}" href="${item.url}" target="_blank">${item.name}</a>
                 </li>
                 <hr>
             `;
         });
 
-        wrapDom.innerHTML = htmlStr || "<li>暂无公告数据</li>";
+        wrap_dom.innerHTML = html_str || "<li>暂无公告数据</li>";
     })
     .catch(err => {
         console.error("公告加载失败：", err);
-        const wrapDom = document.getElementById("news_list_wrap");
-        wrapDom.innerHTML = "<li>连接服务器异常</li>";
+        const wrap_dom = document.getElementById("news_list_wrap");
+        wrap_dom.innerHTML = "<li>连接服务器异常</li>";
     });
 
 });
