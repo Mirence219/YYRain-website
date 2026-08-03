@@ -23,147 +23,9 @@
 #menu_checkbox {
     display: none;
     position: fixed;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
-
-@media(min-width: 768px) {
-    .mobile {
-        display: none;
-    }
-
-/*桌面端导航列表*/
-    .menu ul { 
-        display: flex;
-        list-style: none;
-        height: 50px;
-        align-items: center;
-        gap: 20px;
-        padding-left: 15px;
-    }
-
-/*桌面端导航列表项*/
-    .menu li {
-        display: flex;
-    }
-
-/*桌面端导航列表项的内容（用div包裹）*/
-    .menu_project {
-        padding-right: 10px;
-        padding-left: 10px;
-        margin: -10px;
-        height: 50px;
-        flex-shrink: 0;
-        flex-grow: 0;
-        background: rgba(210, 210, 210, 0);
-        text-decoration-line:none;
-        transition:background 0.3s ease;
-        position:relative;
-    }
-
-/*桌面端导航列表项目图片*/
-    .menu_project > .menu_img {
-        position: absolute;
-        width: 20px;
-        opacity: 0;
-        left: 15px;
-        top: -30px;
-        transition: all ease 0.3s;
-        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-    }
-
-
-/*桌面端导航列表项的文字*/
-    .menu_text {
-        color: black;
-        font-weight: bold;
-        font-style: normal;
-        text-decoration-line: none;
-        line-height: 50px;
-        transition: all 0.3s ease;
-    }
-}
-
-@media(max-width:768px) {
-    .desktop {
-        display:none
-    }
-
-/*移动端菜单按钮*/
-    #menu {
-        display: flex;
-        position: fixed;
-        top: 0px;
-        right: 0px;
-        width: 50px;
-        height:50px;
-        font-size: 30px;
-        transition: all 0.3s ease;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-    }
-
-    /*移动端导航列表*/
-    .menu.mobile {
-        display: flex;
-        position: fixed;
-        background-color: #f1f1f1;
-        top: -250px;
-        width: 100%;
-        transition: top 0.3s ease;
-        z-index: 1;
-    }
-
-    .menu.mobile ul{
-        display: flex;
-        list-style: none;
-        flex-direction: column;
-        width:100%;
-    }
-
-    /*移动端导航列表项*/
-    .menu.mobile li {
-        display: flex;
-        width: 100%;
-    }
-
-    /*移动端导航列表项的内容（用div包裹）*/
-    .menu_project {
-        display: flex;
-        margin-bottom: 0px;
-        width: 100%;
-        height: 50px;
-        flex-shrink: 0;
-        flex-grow: 0;
-        background: rgba(210, 210, 210, 0);
-        text-decoration-line: none;
-        transition: background 0.3s ease;
-    }
-
-    /*移动端导航列表项的文字*/
-    .menu_text {
-        color: black;
-        padding-left:15px;
-        font-weight: bold;
-        font-style: normal;
-        text-decoration-line: none;
-        line-height: 50px
-    }
-
-    #menu_checkbox:checked ~ #menu {
-        transform:rotate(90deg);
-    }
-
-/*    #menu:hover ~ .menu.mobile {
-        top:50px;
-    }*/
-
-    #menu_checkbox:checked ~ .menu.mobile{
-        top:50px;
-    }
-}
-
-
 
 #logo {
     position: relative;
@@ -188,7 +50,7 @@
 }
 
 .menu_project.mgcraft_link:hover {
-    background: rgb(255, 174, 0, 0.3);
+    background: rgba(255, 174, 0, 0.3);
 }
 
 .menu_project.mgcraft_link:hover .menu_text.mgcraft_link {
@@ -236,4 +98,162 @@
 
 .menu_project:hover .compeition_link{
     color: red;
+}
+
+#top_title {
+    flex: 1;
+    opacity: 1;
+    display: flex;
+    font-size: 23px;
+    font-weight: 300;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/*移动端菜单按钮*/
+#menu {
+    display: flex;
+    position: fixed;
+    opacity: 0;
+    top: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+@media(min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
+    /*桌面端导航列表*/
+    .menu ul {
+        display: flex;
+        list-style: none;
+        height: 50px;
+        align-items: center;
+        gap: 20px;
+        padding-left: 15px;
+    }
+
+    /*桌面端导航列表项*/
+    .menu li {
+        display: flex;
+    }
+
+    /*桌面端导航列表项的内容（用div包裹）*/
+    .menu_project {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin: -10px;
+        height: 50px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        background: rgba(210, 210, 210, 0);
+        text-decoration-line: none;
+        transition: background 0.3s ease;
+        position: relative;
+    }
+
+    /*桌面端导航列表项目图片*/
+    .menu_project > .menu_img {
+        position: absolute;
+        width: 20px;
+        opacity: 0;
+        left: 15px;
+        top: -30px;
+        transition: all ease 0.3s;
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
+
+
+    /*桌面端导航列表项的文字*/
+    .menu_text {
+        color: black;
+        font-weight: bold;
+        font-style: normal;
+        text-decoration-line: none;
+        line-height: 50px;
+        transition: all 0.3s ease;
+    }
+}
+
+@media(max-width:768px) {
+    .desktop {
+        display: none
+    }
+
+    #menu {
+        opacity: 1;
+    }
+
+    /*移动端导航列表*/
+    .menu.mobile {
+        display: flex;
+        position: fixed;
+        background-color: #f1f1f1;
+        top: -250px;
+        width: 100%;
+        transition: top 0.3s ease;
+        z-index: 1;
+    }
+
+    .menu.mobile ul {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /*移动端导航列表项*/
+    .menu.mobile li {
+        display: flex;
+        width: 100%;
+    }
+
+    /*移动端导航列表项的内容（用div包裹）*/
+    .menu_project {
+        display: flex;
+        margin-bottom: 0px;
+        width: 100%;
+        height: 50px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        background: rgba(210, 210, 210, 0);
+        text-decoration-line: none;
+        transition: background 0.3s ease;
+    }
+
+    /*移动端导航列表项的文字*/
+    .menu_text {
+        color: black;
+        padding-left: 15px;
+        font-weight: bold;
+        font-style: normal;
+        text-decoration-line: none;
+        line-height: 50px
+    }
+
+    #menu_checkbox:checked ~ #menu {
+        transform: rotate(90deg);
+    }
+
+    /*    #menu:hover ~ .menu.mobile {
+        top:50px;
+    }*/
+
+    #menu_checkbox:checked ~ .menu.mobile {
+        top: 50px;
+    }
+
+    #top_title {
+        margin-right: 50px;
+    }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    {% include 'base.html' %}
+    <title>夜雨市 公告列表 | 芒果方块</title>
+</head>
+<body>
+    {% include 'index.html' %}
+    <!--面包屑导航-->
+    <div class="breadcrumb box text">
+        <a href="/">首页</a> > 
+        <a href="/news">公告列表</a>
+    </div>
+    <!--大字标题-->
+    <div id="news_title" class="box">
+        <h1 class="page_title">夜雨市 公告栏</h1>
+    </div>
+    <!--具体内容-->
+    <div id="news_page" class="box text">
+        <h2>公告列表</h2>
+        <ul class="list" id="news_list_page">
+            公告加载中。。。
+        </ul>
+        <!-- 翻页 -->
+        <div class="pagination" id="news_pagination">
+            <!--页码由JS动态渲染-->
+        </div>
+    </div>
+
+    {% include 'beian.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='js/news.js') }}"></script>
+</body>
+</html>

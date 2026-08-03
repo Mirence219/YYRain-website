@@ -2,8 +2,6 @@ import VideoSelector from "./home.js"
 
 const videoBox = new VideoSelector("#videoPlayer");
 
-console.log("123")
-
 document.addEventListener('DOMContentLoaded', function () {
     // ========== 视频列表 ==========
     axios.get("/api/video/all")

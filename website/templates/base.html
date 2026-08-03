@@ -10,12 +10,15 @@
 <meta property="og:url" content="https://yyrain.cn/">
 <meta property="og:locale" content="zh_CN">
 <meta name="color-scheme" content="light only">
-<link href="static/css/index.css" rel="stylesheet" />
-<link href="static/css/body.css" rel="stylesheet" />
-<link href="static/css/text.css" rel="stylesheet" />
-<link href="static/css/home.css" rel="stylesheet" />
-<link href="static/css/beian.css" rel="stylesheet" />
-<link href="static/image/nr_logo.png" rel="icon" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet"href="{{ url_for('static', filename='css/general_style.css') }}" />
+<link rel="stylesheet"href="{{ url_for('static', filename='css/animation.css') }}" />
+<link rel="stylesheet"href="{{ url_for('static', filename='css/body.css') }}" />
+<link rel="stylesheet"href="{{ url_for('static', filename='css/text.css') }}" />
+<link rel="stylesheet"href="{{ url_for('static', filename='css/home.css') }}" />
+<link rel="stylesheet"href="{{ url_for('static', filename='css/beian.css') }}" />
+<link rel="stylesheet"href="{{ url_for('static', filename='css/news.css') }}" />
+<link rel="icon" href="{{ url_for('static', filename='image/nr_logo.png') }}" />
 
 <!--字体图标-->
-<link rel="stylesheet" href="static/font/iconfont.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='font/iconfont.css') }}">

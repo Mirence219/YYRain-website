@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  {% include 'base.html' %}
+  <meta charset="utf-8">
+  <title>后台登录 - 夜雨市</title>
+  <style>
+    .login-box{max-width:360px;margin:80px auto;padding:20px;border-radius:8px;background:#fff}
+    .login-box h2{text-align:center;margin-bottom:12px}
+    .login-box form{display:flex;flex-direction:column;gap:8px}
+    .login-box input{padding:8px;border:1px solid #ddd;border-radius:4px}
+    .login-btn{padding:10px;border:none;background:#4a90e2;color:#fff;border-radius:4px;cursor:pointer}
+    .tip{color:red;text-align:center}
+  </style>
+</head>
+<body>
+  {% include 'index.html' %}
+  <div class="login-box box">
+    <h2>后台登录</h2>
+    {% with messages = get_flashed_messages(category_filter=['error']) %}
+      {% if messages %}
+        <div class="tip">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+    <form method="post">
+      <input name="username" placeholder="用户名" required />
+      <input name="password" type="password" placeholder="密码" required />
+      <button class="login-btn" type="submit">登录</button>
+    </form>
+  </div>
+  {% include 'beian.html' %}
+</body>
+</html>

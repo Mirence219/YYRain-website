@@ -49,6 +49,13 @@ class WebApp:
             self.db.create_all()
         
         Logger.info("数据库链接初始化完成")
+        # 初始化后台管理（Flask-Admin）扩展
+        try:
+            from src.view.admin_view import init_admin
+            init_admin(self.app, self.db)
+            Logger.info("Flask-Admin 已初始化")
+        except Exception as e:
+            Logger.error(f"初始化 Flask-Admin 失败：{e}", exc_info=True)
 
     def log_init(self):
         '''日志记录器初始化'''

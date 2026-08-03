@@ -2,13 +2,13 @@
 <div class="total_index">
     <nav class="index">
         <a href="/">
-            <img id="logo" src="static/image/nr_logo.png" alt="夜雨市logo">
+            <img id="logo" src="{{ url_for('static', filename='image/nr_logo.png') }}" alt="夜雨市logo">
         </a>
         <div class="menu desktop">
             <ul>
                 <li>
                     <a class="menu_project normal_link" href="/">
-                        <img class="menu_img" src="static/image/nr_logo.png" alt="首页" />
+                        <img class="menu_img" src="{{ url_for('static', filename='image/nr_logo.png') }}" alt="首页" />
                         <div class="menu_text normal_link home_link button">
                             首页
                         </div>
@@ -16,7 +16,7 @@
                 </li>
                 <li>
                     <a class="menu_project normal_link " href="/wiki" target="_blank">
-                        <img class="menu_img" src="static/image/wiki_logo.png" alt="wiki" />
+                        <img class="menu_img" src="{{ url_for('static', filename='image/wiki_logo.png') }}" alt="wiki" />
                         <div class="menu_text normal_link wiki_link button">
                             Wiki
                         </div>
@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <a class="menu_project normal_link" href="/event">
-                        <img class="menu_img" src="static/image/event_logo.png" alt="活动" />
+                        <img class="menu_img" src="{{ url_for('static', filename='image/event_logo.png') }}" alt="活动" />
                         <div class="menu_text normal_link event_link button">
                             活动
                         </div>
@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <a class="menu_project normal_link" href="/competition">
-                        <img class="menu_img" src="static/image/nrl_logo.png" alt="赛事" />
+                        <img class="menu_img" src="{{ url_for('static', filename='image/nrl_logo.png') }}" alt="赛事" />
                         <div class="menu_text normal_link compeition_link button">
                             赛事
                         </div>
@@ -41,12 +41,15 @@
                 <li>
                     <a class="menu_project mgcraft_link" href="https://mgcraft.net" target="_blank">
                         <div class="menu_text mgcraft_link button">
-                            <img src="static/image/mgcraft_logo.png" id="mgcraft_logo"/>
+                            <img src="{{ url_for('static', filename='image/mgcraft_logo.png') }}" id="mgcraft_logo"/>
                             <span class="menu_text mgcraft_link mgcraft">芒果方块</span>官网
                         </div>
                     </a>
                 </li>
             </ul>
+        </div>
+        <div id="top_title">
+            芒果方块 | 夜雨市
         </div>
     </nav>
 

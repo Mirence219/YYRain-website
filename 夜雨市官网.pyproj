@@ -25,13 +25,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="website\src\view\admin_view.py" />
     <Compile Include="website\src\constants.py" />
     <Compile Include="website\src\db_modle.py" />
     <Compile Include="website\src\logger.py" />
+    <Compile Include="website\src\view\api.py" />
     <Compile Include="website\src\view\competition_view.py" />
     <Compile Include="website\src\db_factory.py" />
     <Compile Include="website\src\view\event_view.py" />
     <Compile Include="website\src\view\home_view.py" />
+    <Compile Include="website\src\view\news_view.py" />
     <Compile Include="website\src\view\wiki_view.py" />
     <Compile Include="website\src\view\__init__.py" />
     <Compile Include="website\src\__version__.py" />
@@ -54,10 +57,14 @@
     <Content Include="LICENSE" />
     <Content Include="README.md" />
     <Content Include="sync_db.sh" />
+    <Content Include="website\static\css\animation.css" />
     <Content Include="website\static\css\beian.css" />
     <Content Include="website\static\css\body.css" />
+    <Content Include="website\static\css\general_style.css" />
     <Content Include="website\static\css\home.css" />
+    <Content Include="website\static\css\home_index.css" />
     <Content Include="website\static\css\index.css" />
+    <Content Include="website\static\css\news.css" />
     <Content Include="website\static\css\text.css" />
     <Content Include="website\static\font\demo.css" />
     <Content Include="website\static\font\demo_index.html" />
@@ -67,6 +74,7 @@
     <Content Include="website\static\font\iconfont.ttf" />
     <Content Include="website\static\font\iconfont.woff" />
     <Content Include="website\static\font\iconfont.woff2" />
+    <Content Include="website\static\image\news_page.webp" />
     <Content Include="website\static\image\background.webp" />
     <Content Include="website\static\image\event_logo.png" />
     <Content Include="website\static\image\mgcraft_logo.png" />
@@ -76,14 +84,17 @@
     <Content Include="website\static\image\wiki_logo.png" />
     <Content Include="website\static\js\home.js" />
     <Content Include="website\static\js\insert.js" />
+    <Content Include="website\static\js\news.js" />
     <Content Include="website\static\js\test.js" />
     <Content Include="website\static\svg\board.svg" />
+    <Content Include="website\templates\admin_login.html" />
     <Content Include="website\templates\base.html" />
     <Content Include="website\templates\beian.html" />
     <Content Include="website\templates\competition.html" />
     <Content Include="website\templates\event.html" />
     <Content Include="website\templates\home.html" />
     <Content Include="website\templates\index.html" />
+    <Content Include="website\templates\news.html" />
     <Content Include="website\templates\wiki.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

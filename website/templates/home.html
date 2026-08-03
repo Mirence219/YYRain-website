@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     {% include 'base.html' %}
     <title>夜雨市 | 芒果方块粉丝服</title>
+    <link href="{{ url_for('static', filename='css/home_index.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     {% include 'index.html' %}
 
     <!--组织简介-->
@@ -45,12 +45,12 @@
         <!--帖子/公告板块-->
         <div id="news_box" class="box">
             <h3>公告栏</h3>
+            <a class="more_button" id="more_news_button" href="/news">更多>></a>
             <ul class="list" id="news_list_wrap">
                 公告加载中。。。
                 <!-- JS动态渲染填充内容-->
             </ul>
         </div>
-        </script>
     </div>
 
     <div id="entrance" class="box text">
@@ -75,6 +75,8 @@
     </div>
     {% include 'beian.html' %}
 
-    <script type="module" src="static/js/insert.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/insert.js') }}"></script>
 </body>
 </html>
