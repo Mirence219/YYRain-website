@@ -13,7 +13,7 @@ class NewList(db.Model):
     is_hot = db.Column(db.Integer, default=0)
     enabled = db.Column(db.Integer, default=1)
     sort_order = db.Column(db.Integer, default=0)
-    creat_time = db.Column(db.Text, default=db.func.current_timestamp())
+    creat_time = db.Column(db.Text, server_default = "(datatime('now', 'localtime'))")
     content_text = db.Column(db.Text, nullable=True)
     brief_text = db.Column(db.Text, nullable=True)
 
