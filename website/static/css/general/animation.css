@@ -1,5 +1,5 @@
 /*渐显*/
-@keyframes fadeIn {
+@keyframes fade_in {
     from {
         opacity: 0;
     }
@@ -10,7 +10,7 @@
 }
 
 /* 从下方上浮 */
-@keyframes fadeInUp {
+@keyframes fade_in_up {
     from {
         opacity: 0;
         transform: translateY(24px);
@@ -23,7 +23,7 @@
 }
 
 /* 向左滑入备用 */
-@keyframes fadeInLeft {
+@keyframes fade_in_left {
     from {
         opacity: 0;
         transform: translateX(-20px);

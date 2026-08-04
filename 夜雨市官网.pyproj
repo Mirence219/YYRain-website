@@ -50,6 +50,7 @@
     <Folder Include="website\static\image\" />
     <Folder Include="website\static\css\" />
     <Folder Include="website\static\js\" />
+    <Folder Include="website\static\js\moudle\" />
     <Folder Include="website\static\svg\" />
     <Folder Include="website\templates\" />
     <Folder Include="website\static\" />
@@ -90,6 +91,7 @@
     <Content Include="website\static\image\wiki_logo.png" />
     <Content Include="website\static\js\home.js" />
     <Content Include="website\static\js\insert.js" />
+    <Content Include="website\static\js\moudle\time_ago.js" />
     <Content Include="website\static\js\news.js" />
     <Content Include="website\static\js\test.js" />
     <Content Include="website\static\svg\board.svg" />

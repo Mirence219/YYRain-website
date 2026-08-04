@@ -100,6 +100,8 @@
     color: red;
 }
 
+
+/*导航栏标题*/
 #top_title {
     flex: 1;
     opacity: 1;
@@ -109,7 +111,10 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
+
+
 
 /*移动端菜单按钮*/
 #menu {
@@ -255,5 +260,17 @@
 
     #top_title {
         margin-right: 50px;
+    }
+}
+
+@media (max-width: 350px) {
+    #top_title {
+        font-size: clamp(15px,6vw, 23px);
+    }
+}
+
+@media (max-width: 240px) {
+    #top_title {
+        display: none;
     }
 }

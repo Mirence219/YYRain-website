@@ -10,7 +10,7 @@
     <!--面包屑导航-->
     <div class="breadcrumb box text">
         <a href="/">首页</a> > 
-        <a href="/news">公告列表</a>
+        <a href="/news">公告栏</a>
     </div>
     <!--大字标题-->
     <div id="news_title" class="box">
@@ -30,7 +30,6 @@
 
     {% include 'beian.html' %}
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="{{ url_for('static', filename='js/news.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/news.js') }}"></script>
 </body>
 </html>

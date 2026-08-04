@@ -1,13 +1,18 @@
 #top_title {
-    flex: 1;
     opacity: 0;
-    display: flex;
-    font-size: 23px;
-    font-weight: 300;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    animation: fadeIn linear forwards;
+    animation: fade_in linear forwards;
     animation-timeline: scroll(root);
     animation-range: 30% calc(30% + 100px);
+}
+
+@media (max-width: 350px) {
+    #top_title {
+        font-size: clamp(15px,6vw, 23px);
+    }
+}
+
+@media (max-width: 240px) {
+    #top_title {
+        display: none;
+    }
 }

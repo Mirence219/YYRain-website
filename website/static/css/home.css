@@ -1,12 +1,20 @@
+/*欢迎卡片*/
+.welcome h1{
+    font-size: clamp(20px, 1vw, 30px);
+}
+
+.welcome h2 {
+    font-size: clamp(15px, 1vw, 25px);
+}
+
 /*组织简介卡片*/
 #org_introduction {
     display: flex;
-    margin: 15px;
 }
 
 #org_introduction p {
-    font-size: clamp(18px, 2vw, 20px);
-    line-height: 1.8;
+    font-size: clamp(15px, 3vw, 20px);
+    line-height: 1.5;
     color: #222222;
     text-indent: 2em;
     text-align: justify;
@@ -135,14 +143,25 @@
     width: 120px;
     height: 120px;
     top: 0px;
-    text-decoration: none;
     border-radius: 10px;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+.entrance_button p {
+    font-size: 13px;
+    color: #555555
 }
 
 .entrance_button:hover {
     box-shadow: 0 10px 26px rgba(0,0,0,0.35);
     top: -5px;
-    background: #d8fdff;
+    background-color: #d8fdff8b;
+}
+
+.entrance_img {
+    width: 50%;
+    margin: 5px;
 }
 
 

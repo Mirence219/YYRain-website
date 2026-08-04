@@ -11,7 +11,7 @@
 
     <!--组织简介-->
     <div id="org_introduction" class="text">
-        <div>
+        <div class="box welcome">
             <h1>夜雨市欢迎您！</h1>
             <h2>网站建设中，敬请期待。。。</h2>
         </div>
@@ -57,29 +57,46 @@
         <h3>快捷入口</h3>
         <ul class="list">
             <li>
-                <a class="entrance_button box" href="https://docs.qq.com/aio/p/scdfxzjwuedj61p" target="_blank">夜雨市组织综合指南（腾讯文档）</a>
+                <a class="entrance_button box" href="https://docs.qq.com/aio/p/scdfxzjwuedj61p" target="_blank">
+                    <img class="entrance_img" src="{{ url_for('static', filename='image/nr_logo.webp') }}" alt="夜雨市logo">
+                    <p>夜雨市组织综合指南（腾讯文档）</p>
+                </a>
             </li>
             <li>
-                <a class="entrance_button box" href="https://docs.qq.com/aio/DQmpHdU91cGNQWmhm" target="_blank">芒果方块粉丝服指南（腾讯文档）</a>
+                <a class="entrance_button box" href="https://docs.qq.com/aio/DQmpHdU91cGNQWmhm" target="_blank">
+                    <img  class="entrance_img" src="{{ url_for('static', filename='image/nr_logo.webp') }}" alt="夜雨市logo">
+                    <p>芒果方块粉丝服指南（腾讯文档）</p>
+                </a>
             </li>
             <li>
-                <a class="entrance_button box" href="http://map.mangocraft.cn:2087/#world:-17786:58:15258:198:0.77:0.68:0:0:perspective" target="_blank">芒果方块粉丝服在线地图</a>
+                <a class="entrance_button box" href="http://map.mangocraft.cn:2087/#world:-17786:58:15258:198:0.77:0.68:0:0:perspective" target="_blank">
+                    <img class="entrance_img" src="{{ url_for('static', filename='image/nr_logo.webp') }}" alt="夜雨市logo">
+                    <p>芒果方块粉丝服在线地图</p>
+                </a>
             </li>
             <li>
-                <a class="entrance_button box" href="https://space.bilibili.com/667186816" target="_blank">Mirence的B站个人空间</a>
+                <a class="entrance_button box" href="https://space.bilibili.com/667186816" target="_blank">
+                    <img class="entrance_img" src="{{ url_for('static', filename='image/nr_logo.webp') }}" alt="夜雨市logo">
+                    <p>Mirence的B站个人空间</p>
+                </a>
             </li>
             <li>
-                <a class="entrance_button box" href="https://space.bilibili.com/23240466" target="_blank">芒果方块B站个人空间</a>
+                <a class="entrance_button box" href="https://space.bilibili.com/23240466" target="_blank">
+                    <img class="entrance_img" src="{{ url_for('static', filename='image/nr_logo.png') }}" alt="夜雨市logo">
+                    <p>芒果方块B站个人空间</p>
+                </a>
             </li>
             <li>
-                <a class="entrance_button box" href="https://mcnnyy2.yyrain.cn" target="_blank">MCnnyy2的Wiki站</a>
+                <a class="entrance_button box" href="https://mcnnyy2.yyrain.cn" target="_blank">
+                    <img class="entrance_img" src="{{ url_for('static', filename='image/nr_logo.png') }}" alt="夜雨市logo">
+                    <p>MCnnyy2的Wiki站</p>
+                </a>
             </li>
             </ul>
     </div>
     {% include 'beian.html' %}
 
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="{{ url_for('static', filename='js/insert.js') }}"></script>
 </body>
 </html>

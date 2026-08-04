@@ -1,5 +1,7 @@
+import get_time_ago from "./moudle/time_ago.js";
+
 const default_page = 1;
-const default_size = 10;
+const default_size = 9;
 let max_page = 1;
 const max_button_count = 4; //最大页码按钮数量(包括首页、末页),小于3会炸
 
@@ -116,12 +118,13 @@ function load_news(page, size) {
             if (Number(item.sort_order) > 0) class_list += " top_news";
 
             const [date, time] = (item.creat_time || '').split(" ");
+            const date_str = get_time_ago(date)
 
             html_str += `
                 <li>
                     <a class="${class_list}" href="${item.url}" target="_blank">${item.name}</a>
                     <div class="news_brief">${item.brief_text || ''}</div>
-                    <div class="news_meta">${date || ''}</div>
+                    <div class="news_meta">${date_str || ''}</div>
                 </li>
                 <hr>
             `;
