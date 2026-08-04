@@ -4,6 +4,8 @@ from flask_admin.contrib.sqla import ModelView
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user
 
 
+import os
+
 class AdminAuthIndexView(AdminIndexView):
     def is_accessible(self):
         return current_user.is_authenticated
@@ -37,6 +39,14 @@ def init_admin(app, db):
     This is a lightweight, non-persistent auth suitable for quick setups.
     For production, replace with a proper user model and secure password storage.
     """
+    # 1、先去操作系统环境变量里读取
+    # 有环境变量 → 拿到你设置的账号密码
+    # 没有环境变量 → 取用兜底默认 admin/password
+    val_user = os.getenv("ADMIN_USER", "admin")
+    # 2、把拿到的结果存入 Flask 的 app.config 全局配置容器
+    app.config["ADMIN_USER"] = val_user
+    app.config["ADMIN_PASSWORD"] = os.getenv("ADMIN_PASSWORD", "password")
+
     try:
         # Delay import of models to avoid circular imports at module import time
         from src.db_modle import NewList, VideoList
