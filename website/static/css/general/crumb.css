@@ -1,0 +1,18 @@
+/*通用面包屑导航样式*/
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-left: 15px;
+    gap: 10px;
+}
+
+.breadcrumb a {
+    color: #777777;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: purple;
+}

@@ -10,7 +10,7 @@
     margin: 0 0 8px;
 }
 
-.beian-row {
+.beian-row{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,4 +37,10 @@
 .separator {
     display: inline-block;
     width: 1em;
+}
+
+.beian-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

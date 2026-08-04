@@ -1,3 +1,13 @@
+/*通用文本样式*/
+.text {
+    cursor: default;
+}
+
+/*通用标题样式*/
+.title {
+    text-align: center;
+}
+
 .tip::before {
     content: "✨"; /* 自动在文字前面加个星星 */
     margin-right: 4px;

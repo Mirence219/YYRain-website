@@ -1,0 +1,16 @@
+/*通用卡片样式*/
+.box {
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: white;
+    color: black;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.box:hover {
+    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
