@@ -1,11 +1,15 @@
 # 夜雨市官网源码仓库
 本仓库存放夜雨市组织官网源代码，仅用于公开展示参考。
 
-前端：原生 HTML / CSS / JavaScript
+前端：原生 HTML + CSS + JavaScript
 
-服务端模板：Jinja2
+页面模板引擎：Jinja2
 
-后端：Python + Flask(SQLAlchemy/admin)
+后端技术栈：Python、Flask Web 框架
+
+ORM：SQLAlchemy
+
+后台管理：Flask-Admin
 
 
 夜雨市是Minecraft公益服务器芒果方块粉丝服内的组织之一，本站由组织成员独立搭建运营，**网站与芒果方块官方无直接关联**。
