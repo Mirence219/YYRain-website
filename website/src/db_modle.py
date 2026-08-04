@@ -1,5 +1,6 @@
 from src.db_factory import db_factory
 from src.logger import Logger
+from sqlalchemy import text
 
 db = db_factory.get_db()
 
@@ -13,7 +14,7 @@ class NewList(db.Model):
     is_hot = db.Column(db.Integer, default=0)
     enabled = db.Column(db.Integer, default=1)
     sort_order = db.Column(db.Integer, default=0)
-    creat_time = db.Column(db.Text, server_default = "(datatime('now', 'localtime'))")
+    creat_time = db.Column(db.Text, server_default = text("(datetime('now', 'localtime'))"))
     content_text = db.Column(db.Text, nullable=True)
     brief_text = db.Column(db.Text, nullable=True)
 

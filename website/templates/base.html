@@ -35,4 +35,17 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='font/iconfont.css') }}">
 
 <!--JS模块-->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js " defer></script>
+<script>
+    // Jinja 渲染出真实地址，全程无嵌套引号冲突
+    const AXIOS_LOCAL = "{{ url_for('static', filename='js/package/axios.min.js') }}";
+    function fallback_axios(script_el) {
+        script_el.onerror = null;
+        script_el.src = AXIOS_LOCAL;
+    }
+</script>
+
+<!--<script src="{{url_for("static", filename = "js/package/axios.min.js")}}"></script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+        crossorigin="anonymous"
+        onerror="fallback_axios(this)" defer></script>

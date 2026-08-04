@@ -150,7 +150,8 @@
 
 .entrance_button p {
     font-size: 13px;
-    color: #555555
+    color: #555555;
+    text-align: center;
 }
 
 .entrance_button:hover {

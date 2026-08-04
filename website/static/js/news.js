@@ -1,4 +1,4 @@
-import get_time_ago from "./moudle/time_ago.js";
+import get_time_ago from "./module/time_ago.js";
 
 const default_page = 1;
 const default_size = 9;

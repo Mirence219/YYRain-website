@@ -22,3 +22,16 @@
     text-decoration: underline;
     color: blue;
 }
+
+/*通用不可用按钮*/
+.enabled_button {
+    cursor: not-allowed;
+    opacity: 0.5;
+    filter: brightness(0.8);
+}
+
+.enabled_button:hover {
+    top: 0px;
+    background-color:#ababab88;
+    filter: brightness(1);
+}
