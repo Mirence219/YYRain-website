@@ -11,6 +11,7 @@
     color: #777777;
     font-size: 15px;
     text-decoration: none;
+    filter: invert(var(--theme-invert));
 }
 
 .breadcrumb a:hover {

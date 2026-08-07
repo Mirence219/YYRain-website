@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/beian.css') }}" />
 
 <!-- 公共样式 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/general/theme.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/animation.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/box.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/button.css') }}" />
@@ -36,7 +37,6 @@
 
 <!--JS模块-->
 <script>
-    // Jinja 渲染出真实地址，全程无嵌套引号冲突
     const AXIOS_LOCAL = "{{ url_for('static', filename='js/package/axios.min.js') }}";
     function fallback_axios(script_el) {
         script_el.onerror = null;

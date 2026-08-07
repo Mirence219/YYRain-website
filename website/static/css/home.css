@@ -15,7 +15,6 @@
 #org_introduction p {
     font-size: clamp(15px, 3vw, 20px);
     line-height: 1.5;
-    color: #222222;
     text-indent: 2em;
     text-align: justify;
     letter-spacing: 0.3px;
@@ -30,7 +29,6 @@
 #news_box {
     width: 28%;
     margin: 15px auto;
-    color: black;
 }
 
 #news_box ul {
@@ -41,13 +39,12 @@
     transition: all 0.1s ease;
     background: rgba(200, 200, 200, 0);
     text-decoration: none;
-    color: black;
     margin: 5px;
     display:block;
 }
 
 .news_button:hover {
-    color: blue;
+    color: var(--theme-a-hover);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -57,7 +54,6 @@
     display: flex;
     width: 68%;
     /*aspect-ratio: 24/9;*/
-    color: black;
     padding: 5px;
     margin: 15px auto;
 }
@@ -134,37 +130,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
-/*入口按钮*/
-.entrance_button {
-    position: relative;
-    align-items: center;
-    display: flex;
-    width: 120px;
-    height: 120px;
-    top: 0px;
-    border-radius: 10px;
-    text-decoration: none;
-    flex-direction: column;
-}
-
-.entrance_button p {
-    font-size: 13px;
-    color: #555555;
-    text-align: center;
-}
-
-.entrance_button:hover {
-    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-    top: -5px;
-    background-color: #d8fdff8b;
-}
-
-.entrance_img {
-    width: 50%;
-    margin: 5px;
-}
-
 
 .empty {
     height: 600px;

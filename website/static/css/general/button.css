@@ -4,6 +4,11 @@
     border: none;
 }
 
+/*通用超链接样式*/
+a {
+    color: var(--theme-text-color);
+}
+
 /*通用更多按钮样式*/
 .more_button {
     display: flex;
@@ -16,6 +21,7 @@
     text-decoration: none;
     cursor: pointer;
     font-style: italic;
+    filter: invert(var(--theme-invert));
 }
 
 .more_button:hover {
@@ -35,3 +41,40 @@
     background-color:#ababab88;
     filter: brightness(1);
 }
+
+/*入口按钮*/
+.entrance_button {
+    position: relative;
+    align-items: center;
+    display: flex;
+    width: 120px;
+    height: 120px;
+    top: 0px;
+    border-radius: 10px;
+    text-decoration: none;
+    flex-direction: column;
+}
+
+.entrance_button p {
+    font-size: 13px;
+    color: #555555;
+    text-align: center;
+    filter: invert(var(--theme-invert))
+}
+
+.entrance_button_coll_box:hover > .entrance_button{
+    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+    top: -5px;
+    background-color: var(--theme-button-hover);
+}
+
+.entrance_img {
+    width: 50%;
+    margin: 5px;
+}
+
+    .entrance_img.no_img {
+        filter: invert(var(--theme-invert))
+    }
+
+

@@ -1,11 +1,13 @@
 /*通用文本样式*/
 .text {
     cursor: default;
+    color: var(--theme-text-color)
 }
 
 /*通用标题样式*/
 .title {
     text-align: center;
+    color: var(--theme-text-color)
 }
 
 .tip::before {

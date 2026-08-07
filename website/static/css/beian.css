@@ -8,6 +8,7 @@
 
 .copyright-text {
     margin: 0 0 8px;
+    filter: invert(var(--theme-invert));
 }
 
 .beian-row{
@@ -28,6 +29,7 @@
 .beian-row a {
     color: #333;
     text-decoration: none;
+    filter: invert(var(--theme-invert));
 }
 
 .beian-row a:hover {

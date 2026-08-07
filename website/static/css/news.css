@@ -1,7 +1,7 @@
 #news_title {
     display: flex;
     position: relative;
-    background-color: rgba(245, 245, 245, 0.5);
+    background-color: rgba(var(--theme-bg-rgb), 0.5);
     background-repeat: repeat;
     background-size: cover;
     background-position: center center;

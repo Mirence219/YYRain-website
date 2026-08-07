@@ -1,0 +1,21 @@
+/*主题样式*/
+:root {
+    --theme-bg-color: #f8f8f8;
+    --theme-bg-rbg: 248, 248, 248;
+    --theme-bg-color-hover: #ddd;
+    --theme-text-color: #111;
+    --theme-invert: 0;
+    --thme-a-hover: blue;
+    --theme-button-hover: #d8fdff8b;
+    --theme-index-color: #f1f1f1;
+}
+
+:root {
+    --theme-bg-color: #444;
+    --theme-bg-color-hover: #555;
+    --theme-text-color: #ddd;
+    --theme-invert: 1;
+    --theme-a-hover: cyan;
+    --theme-button-hover: #5664658b;
+    --theme-index-color: #282828;
+}

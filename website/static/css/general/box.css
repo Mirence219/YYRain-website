@@ -2,8 +2,8 @@
 .box {
     box-sizing: border-box;
     border-radius: 20px;
-    background: white;
-    color: black;
+    background: var(--theme-bg-color);
+    color: var(--theme-text-color);
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     transition: all 0.3s ease;
     padding: 10px;
