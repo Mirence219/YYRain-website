@@ -8,6 +8,7 @@
     --thme-a-hover: blue;
     --theme-button-hover: #d8fdff8b;
     --theme-index-color: #f1f1f1;
+    --theme-font-family: "微软雅黑", "PingFang SC", "Note Sans SC";
 }
 
 :root {

@@ -5,6 +5,7 @@ body {
     background-position: center center;
     padding-top: 50px;
     min-width: 230px;
+    font-family: "微软雅黑", "PingFang SC", "Note Sans SC";
 }
 
 body::before {

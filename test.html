@@ -1,0 +1,16 @@
+<script type="module">
+    import SwitchDomManager from "./module/switch_dom_manager.js"
+
+    function fun1() {
+        console.log("函数1已执行");
+    }
+
+    function fun2() {
+        console.log("函数2已执行");
+    }
+
+    console.log("测试开始");
+    const switch_button = SwitchDomManager(2, [fun1, fun2]);
+
+    
+</script>

@@ -113,6 +113,7 @@
     justify-content: center;
     transition: all 0.3s ease;
     white-space: nowrap;
+    color: var(--theme-text-color);
 }
 
 
@@ -122,6 +123,7 @@
     display: flex;
     position: fixed;
     opacity: 0;
+    color: var(--theme-text-color);
     top: 0px;
     right: 0px;
     width: 50px;
