@@ -17,6 +17,7 @@
     <Environment>Debug=true
 ADMIN_USER=Mirence
 ADMIN_PASSWORD=wigtonwigton!</Environment>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -101,7 +102,8 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Content Include="website\static\image\nr_logo_dark.webp" />
     <Content Include="website\static\image\wiki_logo.png" />
     <Content Include="website\static\js\home.js" />
-    <Content Include="website\static\js\module\dom_manager\abstract_dom_manager.js" />
+    <Content Include="website\static\js\index.js" />
+    <Content Include="website\static\js\module\dom_manager\normal_dom_manager.js" />
     <Content Include="website\static\js\module\dom_manager\button_dom_manager.js" />
     <Content Include="website\static\js\module\dom_manager\switch_dom_manager.js" />
     <Content Include="website\static\js\module\video_selector.js" />

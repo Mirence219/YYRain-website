@@ -1,4 +1,6 @@
-//返回时间差（刚刚、几分钟前、几小时前、几天前、原日期）
+/** 返回时间差
+ * （刚刚、几分钟前、几小时前、几天前、原日期）
+ */
 export default function get_time_ago(date) {
     const now = Date.now();
     const target = new Date(date).getTime();

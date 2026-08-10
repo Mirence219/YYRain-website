@@ -1,4 +1,5 @@
 <!--导航栏-->
+<script type="module" src="{{url_for("static", filename = "js/index.js")}}"></script>
 <div class="total_index">
     <nav class="index">
         <a href="/">
@@ -41,7 +42,7 @@
                 <li>
                     <a class="menu_project mgcraft_link" href="https://mgcraft.net" target="_blank">
                         <div class="menu_text mgcraft_link button">
-                            <img src="{{ url_for('static', filename='image/mgcraft_logo.webp') }}" id="mgcraft_logo"/>
+                            <img src="{{ url_for('static', filename='image/mgcraft_logo.webp') }}" id="mgcraft_logo" />
                             <span class="menu_text mgcraft_link mgcraft">芒果方块</span>官网
                         </div>
                     </a>
@@ -53,8 +54,7 @@
         </div>
     </nav>
 
-    <input type="checkbox" id="menu_checkbox" />
-    <label class="iconfont icon-caidan mobile button" id="menu" for="menu_checkbox"></label>
+    <label class="iconfont icon-caidan mobile button" id="menu"></label>
     <!--移动端导航-->
 
     <div class="menu mobile">

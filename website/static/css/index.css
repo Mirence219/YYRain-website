@@ -135,6 +135,7 @@
     z-index: 2;
 }
 
+
 @media(min-width: 768px) {
     .mobile {
         display: none;
@@ -249,15 +250,11 @@
         line-height: 50px
     }
 
-    #menu_checkbox:checked ~ #menu {
+    #menu[data-state="on"] {
         transform: rotate(90deg);
     }
 
-    /*    #menu:hover ~ .menu.mobile {
-        top:50px;
-    }*/
-
-    #menu_checkbox:checked ~ .menu.mobile {
+    .menu.mobile[data-view="on"] {
         top: 50px;
     }
 

@@ -1,4 +1,4 @@
-import AbstractDomManager from "./abstract_dom_manager.js"
+import NormalDomManager from "./normal_dom_manager.js"
 
 export const TriggerMode = Object.freeze({
     CLICK: "click",                // 左键单击
@@ -28,9 +28,9 @@ export const TriggerMode = Object.freeze({
 const TRIGGER_MODE_LIST = Object.values(TriggerMode);
 
 /**
- * 开关类型DOM对象管理器
+ * 开关类型DOM管理器
  */
-export default class SwitchDomManager extends AbstractDomManager {
+export default class SwitchDomManager extends NormalDomManager {
     #state_index;
     #state_count;
     #handlers;
@@ -44,7 +44,7 @@ export default class SwitchDomManager extends AbstractDomManager {
      */
     constructor(state_count = 2, handlers = null, trigger_mode = TriggerMode.CLICK) {
         super();
-        console.debug("[DEBUG]创建开关类型DOM对象管理器");
+        console.debug("[DEBUG] 创建开关类型DOM对象管理器");
         if (state_count < 2) {
             throw new Error("开关状态数至少为2");
         }
@@ -62,7 +62,9 @@ export default class SwitchDomManager extends AbstractDomManager {
      * 初始化
      */
     init() {
-        super.init();
+        if (super.init() != 0) {
+            return;
+        }
         this.#bind_handler();
     }
 
@@ -70,8 +72,8 @@ export default class SwitchDomManager extends AbstractDomManager {
      * 绑定/切换事件触发函数
      */
     #bind_handler() {
-        this.el.addEventListener(this.#trigger_mode, () => {
-            console.debug(`[DEBUG]元素触发${this.#trigger_mode},当前可用状态：${this.#enable ? "可用": "不可用"}`)
+        this._el.addEventListener(this.#trigger_mode, () => {
+            console.debug(`[DEBUG] 元素触发${this.#trigger_mode},当前可用状态：${this.#enable ? "可用": "不可用"}`)
             if (this.#enable){
                 this.#handlers[this.#state_index]?.();
                 this.#state_index = (this.#state_index + 1) % this.#state_count;
@@ -85,11 +87,11 @@ export default class SwitchDomManager extends AbstractDomManager {
      */
     set_state(state_num) {
         if (!Number.isInteger(state_num)) {
-            console.error("[ERROR]设置状态失败：输入的值不是整数")
+            console.error("[ERROR] 设置状态失败：输入的值不是整数")
             return;
         }
         if (!(-this.#state_count <= state_num && state_num < this.#state_count)) {
-            console.error("[ERROR]设置状态失败：超出索引")
+            console.error("[ERROR] 设置状态失败：超出索引")
             return;
         }
         if (state_num > 0) {
@@ -98,7 +100,7 @@ export default class SwitchDomManager extends AbstractDomManager {
         else {
             this.#state_index = this.#state_count + state_num;
         }
-        console.debug(`[DEBUG]元素状态设置为${this.#state_index}`);
+        console.debug(`[DEBUG] 元素状态设置为${this.#state_index}`);
     }
 
     /**
@@ -107,7 +109,7 @@ export default class SwitchDomManager extends AbstractDomManager {
      */
     set_enable(value) {
         this.#enable = !!value;
-        console.debug(`[DEBUG]元素可用状态设置为${this.#enable ? "可用" : "不可用"}`);
+        console.debug(`[DEBUG] 元素可用状态设置为${this.#enable ? "可用" : "不可用"}`);
     }
 
     /**
