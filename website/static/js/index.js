@@ -6,7 +6,8 @@ import NormalDomManager from "./module/dom_manager/normal_dom_manager.js";
  */
 function index_init() {
     menu_off();
-    const default_theme = localStorage.getItem("theme");
+    let default_theme = localStorage.getItem("theme");
+    if (default_theme == null) default_theme = THEME_LIST.WHITE;
     const default_theme_state = THEME_LIST.indexOf(default_theme);
     theme_button.set_state(default_theme_state);
     set_logo(default_theme);
@@ -64,15 +65,15 @@ function set_theme(theme_name) {
  * @param {any} theme_name
  */
 function set_theme_img(theme_name) {
-    if (theme_name === "white") {
+    if (theme_name === THEME.WHITE) {
         theme_img.set_src("/static/image/theme_white.svg");
         theme_button.set_title("切换主题（当前：极昼白）");
     }
-    else if (theme_name === "dark") {
+    else if (theme_name === THEME.DARK) {
         theme_img.set_src("/static/image/theme_dark.svg");
         theme_button.set_title("切换主题（当前：深空灰）");
     }
-    else if (theme_name === "pink") {
+    else if (theme_name === THEME.PINK) {
         theme_img.set_src("/static/image/theme_pink.svg");
         theme_button.set_title("切换主题（当前：樱花粉）");
     }
