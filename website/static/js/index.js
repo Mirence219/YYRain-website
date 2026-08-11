@@ -7,7 +7,8 @@ import NormalDomManager from "./module/dom_manager/normal_dom_manager.js";
 function index_init() {
     menu_off();
     let default_theme = localStorage.getItem("theme");
-    if (default_theme == null) default_theme = THEME_LIST.WHITE;
+    if (default_theme == null) default_theme = THEME.WHITE;
+    console.log(default_theme);
     const default_theme_state = THEME_LIST.indexOf(default_theme);
     theme_button.set_state(default_theme_state);
     set_logo(default_theme);
