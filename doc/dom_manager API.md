@@ -9,22 +9,22 @@
 
 ## 目录
 
-- [NormalDomManager 通用DOM管理器]
-  - [实例创建]
-  - [DOM绑定方法]
-  - [生命周期与状态查询]
-  - [class 类名操作]
-  - [id 属性操作]
-  - [data‑* 自定义属性操作]
-  - [动态生成：单值属性]
-  - [动态生成：布尔属性]
-- [SwitchDomManager 开关状态管理器]
-  - [构造函数]
-  - [生命周期]
-  - [状态控制API]
-  - [TriggerMode 触发枚举]
-- [完整使用示例]
-- [重要注意事项]
+- [NormalDomManager 通用 DOM 管理器](#normaldommanager-%E9%80%9A%E7%94%A8dom%E7%AE%A1%E7%90%86%E5%99%A8)
+  - [实例创建](#%E5%AE%9E%E4%BE%8B%E5%88%9B%E5%BB%BA)
+  - [DOM 绑定方法](#dom%E7%BB%91%E5%AE%9A%E6%96%B9%E6%B3%95)
+  - [生命周期与状态查询](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%B8%8E%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2)
+  - [class 类名操作](#class-%E7%B1%BB%E5%90%8D%E6%93%8D%E4%BD%9C)
+  - [id 属性操作](#id-%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C)
+  - [data‑* 自定义属性操作](#data-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C)
+  - [动态生成：单值属性](#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E5%8D%95%E5%80%BC%E5%B1%9E%E6%80%A7)
+  - [动态生成：布尔属性](#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7)
+- [SwitchDomManager 开关状态管理器](#switchdommanager-%E5%BC%80%E5%85%B3%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%99%A8%E7%BB%A7%E6%89%BF-normaldommanager)
+  - [构造函数](#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)
+  - [生命周期](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
+  - [状态控制 API](#%E7%8A%B6%E6%80%81%E6%8E%A7%E5%88%B6api)
+  - [TriggerMode 触发枚举](#triggermode-%E8%A7%A6%E5%8F%91%E6%9E%9A%E4%B8%BE)
+- [完整使用示例](#%E5%AE%8C%E6%95%B4%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B)
+- [重要注意事项](#%E9%87%8D%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
 
 ---
 
