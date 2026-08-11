@@ -18,7 +18,7 @@
   - [data‑* 自定义属性操作](#data-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C)
   - [动态生成：单值属性](#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E5%8D%95%E5%80%BC%E5%B1%9E%E6%80%A7)
   - [动态生成：布尔属性](#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7)
-- [SwitchDomManager 开关状态管理器](#switchdommanager-%E5%BC%80%E5%85%B3%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%99%A8%E7%BB%A7%E6%89%BF-normaldommanager)
+- [SwitchDomManager 开关状态管理器](#switchdommanager-%E5%BC%80%E5%85%B3%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%99%A8)
   - [构造函数](#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)
   - [生命周期](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
   - [状态控制 API](#%E7%8A%B6%E6%80%81%E6%8E%A7%E5%88%B6api)
