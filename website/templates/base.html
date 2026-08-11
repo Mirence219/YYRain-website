@@ -44,6 +44,14 @@
     }
 </script>
 
+<!--主题样式-->
+<script>
+    let default_theme = localStorage.getItem("theme");
+    if (default_theme == null) default_theme = "white";
+    document.documentElement.dataset.theme = default_theme;
+    console.debug(`[DEBUG] 已恢复主题样式为"${default_theme}"`);
+</script>
+
 <!--<script src="{{url_for("static", filename = "js/package/axios.min.js")}}"></script>-->
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"

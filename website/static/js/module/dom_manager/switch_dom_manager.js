@@ -94,7 +94,7 @@ export default class SwitchDomManager extends NormalDomManager {
             console.error("[ERROR] 设置状态失败：超出索引")
             return;
         }
-        if (state_num > 0) {
+        if (state_num >= 0) {
             this.#state_index = state_num;
         }
         else {

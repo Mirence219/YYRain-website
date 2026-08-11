@@ -1,5 +1,9 @@
 /*主题样式*/
 :root {
+    --theme-font-family: "微软雅黑", "PingFang SC", "Note Sans SC";
+}
+
+:root[data-theme="white"] {
     --theme-bg-color: #f8f8f8;
     --theme-bg-rbg: 248, 248, 248;
     --theme-bg-color-hover: #ddd;
@@ -8,15 +12,34 @@
     --thme-a-hover: blue;
     --theme-button-hover: #d8fdff8b;
     --theme-index-color: #f1f1f1;
-    --theme-font-family: "微软雅黑", "PingFang SC", "Note Sans SC";
+    --theme-index-button-color: #9d4722;
 }
 
-:root {
+:root[data-theme="dark"] {
     --theme-bg-color: #444;
+    --theme-bg-rbg: 68, 68, 68;
     --theme-bg-color-hover: #555;
     --theme-text-color: #ddd;
     --theme-invert: 1;
     --theme-a-hover: cyan;
     --theme-button-hover: #5664658b;
     --theme-index-color: #282828;
+    --theme-index-button-color: #f1f1f1;
+}
+
+:root[data-theme="pink"] {
+    --theme-bg-color: #fff0f7;
+    --theme-bg-rbg: 248, 248, 248;
+    --theme-bg-color-hover: #ddd;
+    --theme-text-color: #111;
+    --theme-invert: 0;
+    --theme-a-hover: blue;
+    --theme-button-hover: #ffcce58b;
+    --theme-index-color: #ffcccc;
+    --theme-index-button-color: #ff4bef;
+}
+
+/*提高hidden的优先级*/
+[hidden] {
+    display: none !important;
 }

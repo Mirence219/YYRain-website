@@ -73,8 +73,44 @@ a {
     margin: 5px;
 }
 
-    .entrance_img.no_img {
-        filter: invert(var(--theme-invert))
-    }
+.entrance_img.no_img {
+    filter: invert(var(--theme-invert))
+}
+
+
+/*导航栏按钮*/
+.index_button_hover {
+    position: relative;
+}
+
+.index_button_hover_line {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+    width: 35px;
+    height: 3px;
+    background: var(--theme-index-button-color);
+    transform: translateX(-50%) scaleX(0);
+    border-radius: 2px;
+    transition: transform 0.2s cubic-bezier(0, 0, 0, 1)
+}
+
+.index_button_hover:hover .index_button_div{
+    animation: shake_small 0.55s infinite linear;
+}
+
+.index_button_hover:hover  .index_button_hover_line {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.index_button_hover:active .index_button_hover_line {
+    transform: translateX(-50%) scaleX(0);
+}
+
+.index_button_div * {
+    display: flex;
+}
+
 
 

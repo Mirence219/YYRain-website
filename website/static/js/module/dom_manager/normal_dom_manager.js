@@ -13,11 +13,11 @@ export default class NormalDomManager {
      */
     init() {
         if (!this.is_binded()) {
-            console.error(`[ERROR]初始化失败：该${this.constructor.name}实例未绑定过元素`);
+            console.error(`[ERROR] 初始化失败：该${this.constructor.name}实例未绑定过元素`);
             return -1;
         }
         this.inited = true;
-        console.debug(`[DEBUG]初始化${this.constructor.name}实例`);
+        console.debug(`[DEBUG] 初始化${this.constructor.name}实例`);
         return 0;
     }
     /**
@@ -31,17 +31,17 @@ export default class NormalDomManager {
             return;
         }
         if (this.is_binded()) {
-            console.error(`[ERROR]绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
             return;
         }
         
         const safe_class_name = CSS.escape(String(class_name));
         this._el = document.querySelector(`.${safe_class_name}`);
         if (this._el === null) {
-            console.error(`[ERROR]绑定失败：找不到类为${safe_class_name}的元素`);
+            console.error(`[ERROR] 绑定失败：找不到类为${safe_class_name}的元素`);
             return;
         }
-        console.debug(`[DEBUG]绑定成功：已绑定一个类为${safe_class_name}的元素，并注册为${this.constructor.name}`);
+        console.debug(`[DEBUG] 绑定成功：已绑定一个类为${safe_class_name}的元素，并注册为${this.constructor.name}`);
     }
 
     /**
@@ -55,17 +55,17 @@ export default class NormalDomManager {
             return;
         }
         if (this.is_binded()) {
-            console.error(`[ERROR]绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
             return;
         }
 
         const safe_id_name = CSS.escape(String(id_name));
         this._el = document.querySelector(`#${safe_id_name}`);
         if (this._el === null) {
-            console.error(`[ERROR]绑定失败：找不到id为${safe_id_name}的元素`);
+            console.error(`[ERROR] 绑定失败：找不到id为${safe_id_name}的元素`);
             return;
         }
-        console.debug(`[DEBUG]绑定成功：已绑定一个id为${safe_id_name}的元素，并注册为${this.constructor.name}`);
+        console.debug(`[DEBUG] 绑定成功：已绑定一个id为${safe_id_name}的元素，并注册为${this.constructor.name}`);
     }
 
     /**
@@ -79,17 +79,17 @@ export default class NormalDomManager {
             return;
         }
         if (this.is_binded()) {
-            console.error(`[ERROR]绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
             return;
         }
 
         const safe_tag_name = CSS.escape(String(tag_name));
         this._el = document.querySelector(safe_tag_name);
         if (this._el === null) {
-            console.error(`[ERROR]绑定失败：找不到tag为${safe_tag_name}的元素`);
+            console.error(`[ERROR] 绑定失败：找不到tag为${safe_tag_name}的元素`);
             return;
         }
-        console.debug(`[DEBUG]绑定成功：已绑定一个tag为${safe_tag_name}的元素，并注册为${this.constructor.name}`);
+        console.debug(`[DEBUG] 绑定成功：已绑定一个tag为${safe_tag_name}的元素，并注册为${this.constructor.name}`);
     }
 
     /**
@@ -106,7 +106,7 @@ export default class NormalDomManager {
             return;
         }
         if (this.is_binded()) {
-            console.error(`[ERROR]绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
             return;
         }
 
@@ -132,7 +132,7 @@ export default class NormalDomManager {
         this._el = document.querySelector(data_selector);
         
         if (this._el === null) {
-            console.error(`[ERROR]绑定失败：找不到${data_selector}的元素`);
+            console.error(`[ERROR] 绑定失败：找不到${data_selector}的元素`);
             return;
         }
         console.debug(`[DEBUG] 绑定成功：已绑定一个符合属性${data_selector}的元素，并注册为${this.constructor.name}`);
@@ -148,17 +148,17 @@ export default class NormalDomManager {
             return;
         }
         if (this.is_binded()) {
-            console.error(`[ERROR]绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
             return;
         }
 
         const safe_css_selector = String(css_selector);
         this._el = document.querySelector(safe_css_selector);
         if (this._el === null) {
-            console.error(`[ERROR]绑定失败：找不到符合CSS选择器"${safe_css_selector}"的元素`);
+            console.error(`[ERROR] 绑定失败：找不到符合CSS选择器"${safe_css_selector}"的元素`);
             return;
         }
-        console.debug(`[DEBUG]绑定成功：已绑定一个符合CSS选择器"${safe_css_selector}"的元素，并注册为${this.constructor.name}`);
+        console.debug(`[DEBUG] 绑定成功：已绑定一个符合CSS选择器"${safe_css_selector}"的元素，并注册为${this.constructor.name}`);
     }
 
     /**
@@ -213,7 +213,7 @@ export default class NormalDomManager {
             return;
         }
         if (this.is_binded()) {
-            console.error(`[ERROR]绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
             return;
         }
 
@@ -242,7 +242,7 @@ export default class NormalDomManager {
         }
         
         if (this._el === null) {
-            console.error(`[ERROR]绑定失败：找不到最近的子级元素`);
+            console.error(`[ERROR] 绑定失败：找不到最近的子级元素`);
             return;
         }
         console.debug(`[DEBUG] 绑定成功：已绑定一个子级元素，并注册为${this.constructor.name}`);
@@ -475,7 +475,7 @@ export default class NormalDomManager {
             return;
         }
         if (!this.is_binded()) {
-            console.error(`[ERROR] 设置自定义属性${safe_data_name}失败：该${this.constructor.name}实例未绑定过元素`);
+            console.error(`[ERROR] 设置自定义属性${data_name}失败：该${this.constructor.name}实例未绑定过元素`);
             return;
         }
 

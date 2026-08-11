@@ -1,4 +1,9 @@
-/*通用隐藏样式*/
+/*隐藏*/
 .hidden {
     visibility: hidden;
+}
+
+/*不可选中*/
+.no_select {
+    user-select: none;
 }

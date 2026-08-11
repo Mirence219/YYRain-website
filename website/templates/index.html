@@ -1,9 +1,9 @@
 <!--导航栏-->
 <script type="module" src="{{url_for("static", filename = "js/index.js")}}"></script>
-<div class="total_index">
+<div class="total_index no_select">
     <nav class="index">
         <a href="/">
-            <img id="logo" src="{{ url_for('static', filename='image/nr_logo_dark.webp') }}" alt="夜雨市logo">
+            <img id="logo" src="{{ url_for('static', filename='image/nr_logo.webp') }}" alt="夜雨市logo">
         </a>
         <div class="menu desktop">
             <ul>
@@ -49,15 +49,26 @@
                 </li>
             </ul>
         </div>
+
         <div id="top_title">
             芒果方块 | 夜雨市
         </div>
+
+        <div class="button index_button_hover" id="theme_button" title="切换主题（当前主题：极昼白）" tabindex="0" >
+            <div class="index_button_div">
+                <img src="{{ url_for("static", filename="image/theme_white.svg")}}" id="theme" hidden />
+            </div>
+            <div class="index_button_hover_line"></div>
+        </div>
+        <div class="button index_button_hover">
+            <div class="index_button_div">
+                <div class="iconfont icon-caidan mobile" id="menu" tabindex="0"></div>
+            </div>
+            <div class="index_button_hover_line"></div>
+        </div>
     </nav>
-
-    <label class="iconfont icon-caidan mobile button" id="menu"></label>
     <!--移动端导航-->
-
-    <div class="menu mobile">
+    <div class="menu mobile" id="mobile_menu">
         <ul>
             <li><a class="menu_project button" href="/"><div class="menu_text">首页</div></a></li>
             <li><a class="menu_project button" href="/wiki" target="_blank"><div class="menu_text">Wiki</div></a></li>
