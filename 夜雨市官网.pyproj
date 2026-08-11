@@ -46,6 +46,7 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Compile Include="website\__main__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="doc\" />
     <Folder Include="website\src\" />
     <Folder Include="website\" />
     <Folder Include="website\src\view\" />
@@ -63,6 +64,7 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Folder Include="website\static\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="doc\dom_manager API.md" />
     <Content Include="LICENSE" />
     <Content Include="README.md" />
     <Content Include="sync_db.sh" />
