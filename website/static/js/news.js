@@ -118,7 +118,7 @@ function load_news(page, size) {
             if (Number(item.sort_order) > 0) class_list += " top_news";
 
             const [date, time] = (item.creat_time || '').split(" ");
-            const date_str = get_time_ago(date)
+            const date_str = get_time_ago(date, time);
 
             html_str += `
                 <li>

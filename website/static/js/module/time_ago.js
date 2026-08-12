@@ -1,9 +1,13 @@
-/** 返回时间差
+/**
+ * 返回时间差
  * （刚刚、几分钟前、几小时前、几天前、原日期）
+ * @param {string} date 日期
+ * @param {string} time 时间
+ * @returns
  */
-export default function get_time_ago(date) {
+export default function get_time_ago(date, time) {
     const now = Date.now();
-    const target = new Date(date).getTime();
+    const target = new Date(`${date} ${time}`).getTime();
     const diff_sec = Math.floor((now - target) / 1000);
 
     if (diff_sec < 60) {
