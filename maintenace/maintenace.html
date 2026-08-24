@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>夜雨市玩家分享站</title>
+        <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            text-wrap: nowrap;
+        }
+        body {
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background:#f7f8fa;
+            color:#333;
+            font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+            padding:20px;
+        }
+        .maintain-box {
+            text-align:center;
+            max-width:500px;
+        }
+        .maintain-box h1 {
+            font-size:28px;
+            margin-bottom:16px;
+            color:#222;
+        }
+        .maintain-box p {
+            font-size:16px;
+            color:#666;
+            line-height:1.6;
+            margin-bottom:24px;
+        }
+        .tip {
+            font-size:14px;
+            color:#999;
+        }
+        .site-footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .copyright-text {
+            margin: 0 0 8px;
+            filter: invert(var(--theme-invert));
+        }
+
+        .beian-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        .beian-icon {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+
+        .beian-row a {
+            color: #333;
+            text-decoration: none;
+            filter: invert(var(--theme-invert));
+        }
+
+        .beian-row a:hover {
+            text-decoration: underline;
+        }
+
+        .separator {
+            display: inline-block;
+            width: 1em;
+        }
+
+        .beian-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title, .title * {
+            font-weight: 100;
+        }
+
+        span#yeyu, span#mango {
+            display: inline-block;
+            mask-image: linear-gradient(#fff, #fff);
+            mask-size: 130% 100%;
+        }
+
+        span#yeyu {
+            width: 110px;
+        }
+
+        span#mango {
+            width: 220px;
+        }
+
+        span#yeyu h1{
+            display: inline-block;
+            animation: left 0.8s cubic-bezier(0, 0, 0.28, 1.36) forwards;
+        }
+
+        span#mango h1{
+            display: inline-block;
+            animation: right 0.8s cubic-bezier(0, 0, 0.28, 1.36) forwards;
+        }
+
+        @keyframes left {
+            from {
+                opacity: 0;
+                transform: translateX(110%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+
+        @keyframes right{
+            from {
+                opacity: 0;
+                transform: translateX(-110%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        </style>
+    </head>
+<body>
+    <div class="maintain-box">
+        <h1 class="title"><span id="yeyu"><h1>夜雨市 </h1></span>|<span id="mango"><h1> 芒果方块粉丝服</h1></span></h1>
+        <br>
+        <h1 id="maintain_title">网站维护中</h1>
+        <br>
+        <p>网站正在进行升级维护，暂时无法访问。<br>感谢您的理解与耐心。</p>
+        <div class="tip" hidden>预计维护完成时间：--:--</div>
+    </div>
+    <footer class="site-footer">
+    <div class="footer-copyright">
+        <p class="copyright-text">© 2026 Mirence | 夜雨市  版权所有</p>
+        <div class="beian-wrap">
+            <div class="beian-row">
+                <img class="beian-icon" src="https://wap.miit.gov.cn/cms_files/webmiit/tplobject/gxbsy/7c75257d15f44bcb9bf47d524cd9cb65/images/home_btn.png" alt="ICP备案图标">
+                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备2026030804号</a>
+            </div>
+            <span class="separator"></span>
+            <div class="beian-row">
+                <img class="beian-icon" src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" alt="公安备案图标">
+                <a href="https://beian.mps.gov.cn/#/query/webSearch?domain=33032902000244" target="_blank" rel="noopener noreferrer">浙公网安备33032902000244号</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const title = document.querySelector("#maintain_title");
+        const MAX_DOT_COUNT = 3;
+        let dot_count = 1;
+        setInterval(() => {
+            title.innerHTML = "网站维护中" + ".".repeat(dot_count);
+            dot_count = (dot_count) % MAX_DOT_COUNT + 1;
+        }, 1000)
+    </script>
+</footer>
+</body>
+</html>
