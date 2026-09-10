@@ -49,7 +49,7 @@ def init_admin(app, db):
 
     try:
         # Delay import of models to avoid circular imports at module import time
-        from src.db_modle import NewList, VideoList
+        from src.db_modle import NewsList, VideoList
     except Exception:
         return None
 
@@ -106,7 +106,7 @@ def init_admin(app, db):
 
     # Create admin with secure index view and register model views
     admin = Admin(app, name="夜雨市后台", index_view=AdminAuthIndexView(name='首页'), url='/admin')
-    admin.add_view(SecureModelView(NewList, db.session, category="数据表"))
+    admin.add_view(SecureModelView(NewsList, db.session, category="数据表"))
     admin.add_view(SecureModelView(VideoList, db.session, category="数据表"))
 
     return admin

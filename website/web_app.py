@@ -1,22 +1,23 @@
 from flask import Flask
 from sqlalchemy import text
 import logging
-from datetime import datetime
-import os
 
 from src.constants import DEFAULT_HOST, DEFAULT_PORT
 from src.logger import Logger
 from src.__version__ import ACCESS_LOG_PATH, DB_PATH
 from src.db_factory import db_factory
 
+
+
 class WebApp:
     '''网页启动入口类'''
     def __init__(self):
         self.app = Flask(__name__)
-        
+
         self.log_init() #日志最先初始化
         self.db_init()
         self.bp_init()
+        self.error_init()
 
     def bp_init(self):
         '''蓝图对象初始化'''
@@ -90,6 +91,12 @@ class WebApp:
 
         Logger.info("访问日志记录器初始化完成")
 
+    def error_init(self):
+        '''错误页面初始化'''
+        from src.view.error_view import error_handler
+        self.app.register_error_handler(404, error_handler["404"])
+        self.app.register_error_handler(500, error_handler["500"])
+        
 
     def run(self, host=DEFAULT_HOST, port=DEFAULT_PORT):
         '''启动网页'''

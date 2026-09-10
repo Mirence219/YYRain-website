@@ -1,7 +1,7 @@
 # dom_manager API.md
 
 > 
-> 模块：`normal_dom_manager.js` / `switch_dom_manager.js`
+> 模块：`normal_dom_manager.js` / `state_dom_manager.js`
 > 
 > 版本：v0.1
 > 
@@ -18,7 +18,7 @@
   - [data‑* 自定义属性操作](#data-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C)
   - [动态生成：单值属性](#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E5%8D%95%E5%80%BC%E5%B1%9E%E6%80%A7)
   - [动态生成：布尔属性](#%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7)
-- [SwitchDomManager 开关状态管理器](#switchdommanager-%E5%BC%80%E5%85%B3%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%99%A8)
+- [StateDomManager 开关状态管理器](#switchdommanager-%E5%BC%80%E5%85%B3%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%99%A8)
   - [构造函数](#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)
   - [生命周期](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
   - [状态控制 API](#%E7%8A%B6%E6%80%81%E6%8E%A7%E5%88%B6api)
@@ -234,19 +234,19 @@ console.log(dom.get_hidden());
 
 ---
 
-## SwitchDomManager 开关状态管理器
+## StateDomManager 开关状态管理器
 
 > 
 > 多档位循环开关组件，适合主题切换、多状态按钮。
 
 ```
-import SwitchDomManager, { TriggerMode } from "./switch_dom_manager.js";
+import StateDomManager, { TriggerMode } from "./state_dom_manager.js";
 ```
 
 ### 构造函数
 
 ```
-new SwitchDomManager(state_count, handlers, trigger_mode)
+new StateDomManager(state_count, handlers, trigger_mode)
 ```
 
 - `state_count: number`：状态总档位，**最小为2**，例如3代表索引 `0,1,2`
@@ -261,7 +261,7 @@ const handler_list = [
     () => set_theme("pink"),
     () => set_theme("white")
 ];
-const btn = new SwitchDomManager(3, handler_list, TriggerMode.CLICK);
+const btn = new StateDomManager(3, handler_list, TriggerMode.CLICK);
 ```
 
 ### 生命周期
@@ -341,7 +341,7 @@ TriggerMode.SCROLL        // 区域滚动
 
 ```
 import NormalDomManager from "./normal_dom_manager.js";
-import SwitchDomManager, { TriggerMode } from "./switch_dom_manager.js";
+import StateDomManager, { TriggerMode } from "./state_dom_manager.js";
 
 // 普通DOM管理器示例
 const titleDom = new NormalDomManager();
@@ -360,7 +360,7 @@ const theme_handlers = [
     () => set_theme("pink"),
     () => set_theme("white")
 ];
-const themeBtn = new SwitchDomManager(3, theme_handlers, TriggerMode.CLICK);
+const themeBtn = new StateDomManager(3, theme_handlers, TriggerMode.CLICK);
 themeBtn.dom_bind_id("theme_button");
 themeBtn.init();
 
@@ -375,9 +375,9 @@ console.log("当前档位：", themeBtn.get_state());
 
 1. **执行顺序强制：绑定DOM → init()**，未绑定DOM调用 init 直接返回错误。
 2. `NormalDomManager` 一个实例只能绑定一个DOM，重复绑定输出错误日志，不会覆盖。
-3. `SwitchDomManager` 的 `handlers` 数组长度建议与 `state_count` 一致；内部使用可选链 `?.()`，不存在索引不会报错。
+3. `StateDomManager` 的 `handlers` 数组长度建议与 `state_count` 一致；内部使用可选链 `?.()`，不存在索引不会报错。
 4. `set_enable(false)` 仅阻止业务回调执行，**不会移除DOM事件监听**。
 5. 单值属性入参内部自动转 `String`；布尔属性入参强制 `!!val` 转为布尔。
 6. 所有公开API失败仅输出 `console.error`，默认不抛出异常，便于UI容错。
 7. `dom_bind_closed_child` 使用 `firstElementChild`，只取元素节点，忽略文本、空白节点。
-8. 当前版本 `SwitchDomManager` 事件回调为内部匿名箭头函数，**没有提供销毁解绑接口**；页面卸载场景需要自行补充事件移除逻辑。
+8. 当前版本 `StateDomManager` 事件回调为内部匿名箭头函数，**没有提供销毁解绑接口**；页面卸载场景需要自行补充事件移除逻辑。

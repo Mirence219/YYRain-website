@@ -366,3 +366,5 @@ FodyWeavers.xsd
 *.db
 *.sqbpro
 /website/static/js/test/*
+/env
+/website/static/js/test/test.html

@@ -1,5 +1,5 @@
-import SwitchDomManager, { TriggerMode } from "./module/dom_manager/switch_dom_manager.js";
-import NormalDomManager from "./module/dom_manager/normal_dom_manager.js";
+import StateDomManager from "./module/dom_manager/state_dom_manager.js";
+import NormalDomManager, { TriggerMode } from "./module/dom_manager/normal_dom_manager.js";
 
 /**
  * 导航栏初始化
@@ -8,7 +8,6 @@ function index_init() {
     menu_off();
     let default_theme = localStorage.getItem("theme");
     if (default_theme == null) default_theme = THEME.WHITE;
-    console.log(default_theme);
     const default_theme_state = THEME_LIST.indexOf(default_theme);
     theme_button.set_state(default_theme_state);
     set_logo(default_theme);
@@ -37,7 +36,7 @@ function menu_off() {
 //移动端菜单按钮
 const menu_button_id = "menu";
 const menu_handler_list = [menu_on, menu_off];
-const menu_button = new SwitchDomManager(2, menu_handler_list);
+const menu_button = new StateDomManager(2, menu_handler_list);
 menu_button.dom_bind_id(menu_button_id);
 menu_button.init();
 
@@ -118,7 +117,7 @@ const theme_handler_list = [
     () => set_theme(THEME.PINK),
     () => set_theme(THEME.WHITE)
 ];
-const theme_button = new SwitchDomManager(3, theme_handler_list);
+const theme_button = new StateDomManager(3, theme_handler_list);
 theme_button.dom_bind_id(theme_button_id);
 theme_button.init();
 

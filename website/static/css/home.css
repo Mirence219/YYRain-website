@@ -23,15 +23,102 @@
 /*首行卡片组*/
 #video_and_news_frame {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
 }
 
 /*帖子/公告卡片*/
 #news_box {
-    width: 28%;
-    margin: 15px auto;
+    width: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
 }
 
-#news_box ul {
+#news_window {
+    width: 55%;
+    position: relative;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-mask-image: linear-gradient(#fff, #fff);
+    -webkit-mask-clip: padding-box;
+    mask-image: linear-gradient(#fff, #fff);
+    border-radius: 20px;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+#news_img_list a::before {
+    content: "giao！";
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.75) 70%);
+    color: #ffffff00;
+}
+
+#news_img_list {
+    display: flex;
+    height: 100%;
+    gap: 0;
+    transform: translateX(-100%); /*隐藏克隆图片*/
+    transition: all 0.3s ease;
+    touch-action: pan-y;
+}
+
+#news_img_list a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#news_img_list li {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#news_img_list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#news_img_list p {
+    position: absolute;
+    width: 100%;
+    color: #ffffffdd;
+    text-align: center;
+    bottom: 10px;
+    font-size: 14px;
+}
+
+#news_img_ctrl {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 1;
+}
+
+#news_window:hover :is(.img_next_button, .img_last_button) {
+    opacity: 1;
+}
+
+#news_list {
+    width: 45%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#news_list ul {
     margin: 5px;
 }
 
@@ -52,23 +139,22 @@
 /*视频卡片*/
 #video_box {
     display: flex;
-    width: 68%;
-    /*aspect-ratio: 24/9;*/
+    flex-direction: row;
+    width: 50%;
     padding: 5px;
-    margin: 15px auto;
+    margin: 0;
 }
 
 /*视频窗口包裹*/
 #video_window {
     background: black;
-    width: 60%;
+    width: 65%;
     aspect-ratio: 16/9;
     padding: 0px;
     margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*以自身蒙版限制iframe*/
     -webkit-mask-image: linear-gradient(#fff, #fff);
     -webkit-mask-clip: padding-box;
     mask-image: linear-gradient(#fff, #fff);
@@ -87,29 +173,36 @@
 
 /*视频选择器*/
 #video_list {
+    display: flex;
+    flex-direction: column;
     margin: 10px;
-    width: 40%;
-    align-items: flex-start; 
-    /*以自身蒙版限制iframe*/
+    width: 35%;
     -webkit-mask-image: linear-gradient(#fff, #fff);
     -webkit-mask-clip: padding-box;
     mask-image: linear-gradient(#fff, #fff);
 }
 
+#video_list > div {
+    display: flex;
+    gap: 5px;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
 #video_list ul {
-    margin: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .video_button {
     transition: all 0.15s ease;
     background: rgba(200, 200, 200, 0);
-    align-self:flex-start;
     margin-bottom: 5px;
 }
 
 .video_button:hover {
     background: rgba(200, 200, 200, 0.5);
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     color: red;
 }
@@ -131,45 +224,49 @@
     justify-content: center;
 }
 
-.empty {
-    height: 600px;
-}
-
-
-/*.text {
-    text-indent: 2em;
-    padding: 5px;
-}*/
-
-
-
-
 
 /*移动端适配*/
-@media(max-width:768px) {
-    #video_and_news_frame {
-        display: block;
-    }
-
+@media(max-width:1024px) {
     #video_box {
-        width: 96%;
-        display: block;
+        flex-direction: column;
     }
 
     #video_window {
-        /* 防止 width:100% 与外边距合计超出父容器导致偏移 */
         width: calc(100% - 10px);
         margin: 5px auto;
         box-sizing: border-box;
     }
 
     #video_list {
-        width: calc(100% - 20px);
+        width: calc(100% - 10px);
     }
 
     #news_box {
-        width: 96%;
-        display: block;
+        flex-direction: column;
+    }
+
+    #news_window {
+        width: calc(100% - 10px);
+        margin: 5px auto;
+    }
+
+    #news_list {
+        width: calc(100% - 10px);
+    }
+}
+
+@media(max-width:768px) {
+    #video_and_news_frame {
+        flex-direction: column;
+    }
+
+    #video_box {
+        width: 100%;
+        margin-right: auto;
+    }
+
+    #news_box {
+        width: 100%;
     }
 }
 

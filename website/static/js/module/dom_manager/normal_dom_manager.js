@@ -1,3 +1,33 @@
+export const DomManagerSymbol = Symbol("dom_manager");
+
+export const TriggerMode = Object.freeze({
+    CLICK: "click",                // 左键单击
+    MOUSE_DOWN: "mousedown",       // 鼠标按下
+    MOUSE_UP: "mouseup",           // 鼠标抬起
+    DBL_CLICK: "dblclick",         // 左键双击
+    CONTEXT_MENU: "contextmenu",   // 右键单击
+    MOUSE_ENTER: "mouseenter",     // 鼠标移入
+    MOUSE_LEAVE: "mouseleave",     // 鼠标移出
+    MOUSE_OVER: "mouseover",       // 鼠标移入(冒泡)
+    MOUSE_OUT: "mouseout",         // 鼠标移出(冒泡)
+    MOUSE_MOVE: "mousemove",       // 鼠标移动
+
+    KEY_DOWN: "keydown",           // 按键按下
+    KEY_UP: "keyup",               // 按键松开
+
+    TOUCH_START: "touchstart",     // 手指按下
+    TOUCH_END: "touchend",         // 手指抬起
+    TOUCH_MOVE: "touchmove",       // 手指滑动
+
+    FOCUS: "focus",                // 获取焦点
+    BLUR: "blur",                  // 失去焦点
+
+    SCROLL: "scroll"               // 区域滚动
+});
+
+export const TRIGGER_MODE_LIST = Object.values(TriggerMode);
+
+
 /**
  * 普通DOM管理器
  */
@@ -5,6 +35,7 @@ export default class NormalDomManager {
     constructor() {
         this._el = null;
         this.inited = false;
+        this[DomManagerSymbol] = true;
     }
 
     /**
@@ -159,6 +190,26 @@ export default class NormalDomManager {
             return;
         }
         console.debug(`[DEBUG] 绑定成功：已绑定一个符合CSS选择器"${safe_css_selector}"的元素，并注册为${this.constructor.name}`);
+    }
+
+    /**
+     * 直接传入原生DOM元素
+     * @param {any} el
+     */
+    dom_bind_el(el) {
+        if (el == null) {
+            console.error(`[ERROR] 参数错误："el"不能为 null 或 undefined`);
+            return;
+        }
+        if (this.is_binded()) {
+            console.error(`[ERROR] 绑定失败：该${this.constructor.name}实例已绑定过元素`);
+            return;
+        }
+        if (!(el instanceof HTMLElement)) {
+            console.error(`[ERROR] 参数错误："el"必须为 HTMLElement 类型`);
+        }
+
+        this._el = el;
     }
 
     /**
@@ -387,7 +438,7 @@ export default class NormalDomManager {
 
     /**
      * 查询DOM的class属性
-     * @returns string
+     * @returns {string}
      */
     get_class() {
         if (!this.is_binded()) {
@@ -449,7 +500,7 @@ export default class NormalDomManager {
 
     /**
      * 查询DOM的id属性
-     * @returns string
+     * @returns {string}
      */
     get_id() {
         if (!this.is_binded()) {
@@ -529,7 +580,7 @@ export default class NormalDomManager {
 
     /**
      * 查询DOM的自定义属性
-     * @returns string
+     * @returns {string}
      */
     get_data(data_name) {
         if (data_name == null) {
@@ -548,11 +599,37 @@ export default class NormalDomManager {
     get el() {
         return this._el;
     }
-
     set el(_) {
         throw new Error("不允许外部修改只读属性el");
     }
+
+    /**
+     * 获取DOM内部的html字符串
+     * @returns {string}
+     */
+    get_html() {
+        return this._el.innerHTML;
+    }
+
+    /**
+     * 修改DOM内部的html字符串
+     * @param {any} html_str
+     */
+    set_html(html_str) {
+        this._el.innerHTML = html_str;
+    }
+
+    /**
+     * 代理style属性
+     */
+    get style() {
+        return this._el.style;
+    }
+    set style(_) {
+        throw new Error("不允许外部修改只读属性style");
+    }
 }
+
 
 
 //单值属性列表

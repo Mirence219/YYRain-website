@@ -9,16 +9,9 @@
 <meta property="og:image" content="https://yyrain.cn/static/image/nr_logo.png">
 <meta property="og:url" content="https://yyrain.cn/">
 <meta property="og:locale" content="zh_CN">
-<meta name="color-scheme" content="light only">
-
-<!-- 基本样式 -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}" />
-<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
-<link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}" />
-<link rel="stylesheet" href="{{ url_for('static', filename='css/beian.css') }}" />
 
 <!-- 公共样式 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/general/root.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/theme.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/animation.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/box.css') }}" />
@@ -28,6 +21,18 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/list.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/pagination.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/general/text.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/general/scroll.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/markdown/github-markdown-light.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/markdown/github-markdown-dark.css') }}" />
+
+<!-- 基本样式 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/beian.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news_detail.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}" />
 
 <!--网站图标-->
 <link rel="icon" href="{{ url_for('static', filename='image/nr_logo.webp') }}" />
@@ -36,13 +41,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='font/iconfont.css') }}">
 
 <!--JS模块-->
-<script>
-    const AXIOS_LOCAL = "{{ url_for('static', filename='js/package/axios.min.js') }}";
-    function fallback_axios(script_el) {
-        script_el.onerror = null;
-        script_el.src = AXIOS_LOCAL;
-    }
-</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <!--主题样式-->
 <script>
@@ -52,8 +51,4 @@
     console.debug(`[DEBUG] 已恢复主题样式为"${default_theme}"`);
 </script>
 
-<!--<script src="{{url_for("static", filename = "js/package/axios.min.js")}}"></script>-->
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-        crossorigin="anonymous"
-        onerror="fallback_axios(this)" defer></script>

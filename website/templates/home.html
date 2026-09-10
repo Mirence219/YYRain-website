@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
     {% include 'base.html' %}
-    <title>夜雨市 玩家分享站 | 芒果方块粉丝服</title>
+    <title>夜雨市 | 芒果方块粉丝服</title>
     <link href="{{ url_for('static', filename='css/home_index.css') }}" rel="stylesheet" />
     <script type="module" src="{{ url_for('static', filename='js/home.js') }}"></script>
 </head>
@@ -37,20 +36,52 @@
             </div>
             <div id="video_list">
                 <h3>节目选择</h3>
-                <ul class="list" id="video_list_wrap">
-                    节目加载中。。。
-                    <!-- JS动态渲染填充内容-->
-                </ul>
+                <div>
+                    <ul class="list" id="video_list_wrap">
+                        节目加载中。。。
+                    </ul>
+                </div>
             </div>
         </div>
         <!--帖子/公告板块-->
         <div id="news_box" class="box">
-            <h3>公告栏</h3>
-            <a class="more_button" id="more_news_button" href="/news">更多>></a>
-            <ul class="list" id="news_list_wrap">
-                公告加载中。。。
-                <!-- JS动态渲染填充内容-->
-            </ul>
+            <div id="news_window">
+                <ul class="list" id="news_img_list">
+                    <li>
+                        <a href="news/detail/43">
+                            <img src="static/image/news_image/44ae2663846831c480216f009343a6f8_720.png" />
+                        </a>
+                        <p>【全服公告】📢 粉丝服 26.2 更新完成公告 1</p>
+                    </li>
+                    <li>
+                        <a href="news/detail/43">
+                            <img src="static/image/news_image/44ae2663846831c480216f009343a6f8_720.png" />
+                        </a>
+                        <p>【全服公告】📢 粉丝服 26.2 更新完成公告 2</p>
+                    </li>
+                    <li>
+                        <a href="news/detail/43">
+                            <img src="static/image/news_image/44ae2663846831c480216f009343a6f8_720.png" />
+                        </a>
+                        <p>【全服公告】📢 粉丝服 26.2 更新完成公告 3</p>
+                    </li>
+                </ul>
+                <div id="news_img_ctrl">
+                    <div class="img_index">
+                        <!--公告封面索引点-->
+                    </div>
+                    <div class="img_next_button button"></div>
+                    <div class="img_last_button button"></div>
+                </div>
+                <!--公告图片加载中。。。-->
+            </div>
+            <div id="news_list">
+                <h3>公告栏</h3>
+                <a class="more_button" id="more_news_button" href="/news">更多>></a>
+                <ul class="list" id="news_list_wrap">
+                    公告加载中。。。
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -107,7 +138,7 @@
             </li>
             <li class="entrance_button_coll_box">
                 <a class="entrance_button box" href="https://ks.org.mgcraft.net" target="_blank">
-                    <img class="entrance_img no_img" src="{{url_for("static", filename = "image/no_icon.svg")}}" alt="网站图标">
+                    <img class="entrance_img" src="https://ks.org.mgcraft.net/favicon.ico" alt="网站图标">
                     <p>芒果方块粉丝服 | 口水哗啦啦小镇</p>
                 </a>
             </li>
@@ -119,7 +150,7 @@
             </li>
             <li class="entrance_button_coll_box">
                 <a class="entrance_button box" href="https://sy.mcnnyy2-test3.pages.dev" target="_blank">
-                    <img class="entrance_img no_img" src="{{url_for("static", filename = "image/no_icon.svg")}}" alt="网站图标">
+                    <img class="entrance_img" src="https://sy.mcnnyy2-test3.pages.dev/favicon.ico" alt="网站图标">
                     <p>芒果方块粉丝服 | 山映水樱</p>
                 </a>
             </li>
@@ -131,7 +162,7 @@
             </li>
             <li class="entrance_button_coll_box">
                 <a class="entrance_button box" href="https://vt.org.mgcraft.net" target="_blank">
-                    <img class="entrance_img no_img" src="{{url_for("static", filename = "image/no_icon.svg")}}" alt="网站图标">
+                    <img class="entrance_img" src="https://vt.org.mgcraft.net/favicon.ico" alt="网站图标">
                     <p>芒果方块粉丝服 | 维特小镇</p>
                 </a>
             </li>
@@ -140,7 +171,5 @@
 
     {% include 'beian.html' %}
 
-
-    <script type="module" src="{{ url_for('static', filename='js/home.js') }}"></script>
 </body>
 </html>

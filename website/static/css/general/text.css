@@ -7,7 +7,7 @@
 /*通用标题样式*/
 .title {
     text-align: center;
-    color: var(--theme-text-color)
+    color: var(--theme-text-color);
 }
 
 .tip::before {
@@ -43,6 +43,7 @@
     vertical-align: middle;
 }
 
+/* 新视频：前置「新」 */
 .newest_video::before {
     content: "新";
     font-size: 0.7em;
@@ -55,6 +56,15 @@
 /* 火热公告：前置「热」 */
 .hot_news::before {
     content: "热";
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #f5222d;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.newest_news.hot_news::before {
+    content: "新 热";
     font-size: 0.7em;
     font-weight: bold;
     color: #f5222d;

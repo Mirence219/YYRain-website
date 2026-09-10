@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {% include 'base.html' %}
+    <title>夜雨市 公告列表 | 芒果方块</title>
+    <script type="module" src="{{ url_for('static', filename='js/news_detail.js') }}"></script>
+</head>
+<body class="news_detail">
+    {% include 'index.html' %}
+    <div class="total_wrap">
+        <!--面包屑导航-->
+        <div class="breadcrumb box text">
+            <a href="/">首页</a> >
+            <a href="/news">公告栏</a> >
+            <a href="."> {{ news_item.name }} </a>
+        </div>
+        <div class="content_wrap">
+            {{ directory | safe }}
+            <div class="box news_content_wrap">
+                <h1 class="title">{{ news_detail.title}}</h1>
+                <div class="news_info">
+                    发布者：{{user_name}}&emsp;发布时间：{{news_item.creat_time}}
+                </div>
+                <hr />
+                <div class="news_content_cover">
+                    {{ news_cover | safe }}
+                </div>
+                <div class="news_content markdown-body">
+                    {{ news_detail.content | safe}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    {% include 'beian.html' %}
+</body>
+</html>

@@ -2,6 +2,7 @@
 .button {
     cursor: pointer;
     border: none;
+    pointer-events: auto;
 }
 
 /*通用超链接样式*/
@@ -13,8 +14,8 @@ a {
 .more_button {
     display: flex;
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 0;
+    right: 10px;
     content: "更多>>";
     font-size: 15px;
     color: rgba(0,0,0,0.5);
@@ -112,5 +113,91 @@ a {
     display: flex;
 }
 
+/*图片翻页通用样式*/
+/*左右箭头*/
+.img_next_button, .img_last_button {
+    width: 20px;
+    height: 60px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff66;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
 
+:is(.img_next_button, .img_last_button):hover{
+    background-color: #ffffff88;
+}
 
+.img_next_button {
+    right: 0px;
+}
+
+.img_last_button {
+    left: 0px;
+}
+
+:is(.img_next_button, .img_last_button)::after {
+    --tx: 3px;
+    --ty: 3px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+    transition: all 0.2s ease;
+}
+
+/*左箭头*/
+.img_last_button::after {
+    transform: rotate(-45deg) translate(var(--tx), var(--ty));
+}
+
+/*右箭头*/
+.img_next_button::after {
+    transform: rotate(135deg) translate(var(--tx), var(--ty));
+}
+
+:is(.img_next_button, .img_last_button):hover::after {
+    --tx: 1px;
+    --ty: 1px;
+}
+
+/*图片索引*/
+.img_index {
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    display: flex;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.img_index ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.img_index li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index_dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ffffff66;
+}
+
+.index_dot[data-active="true"] {
+    background-color: #ffffffdd;
+}

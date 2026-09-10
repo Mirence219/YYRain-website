@@ -3,7 +3,7 @@
     --theme-font-family: "微软雅黑", "PingFang SC", "Note Sans SC";
 }
 
-:root[data-theme="white"] {
+:root[data-theme="white"], :root {
     --theme-bg-color: #f8f8f8;
     --theme-bg-rbg: 248, 248, 248;
     --theme-bg-color-hover: #ddd;

@@ -1,0 +1,76 @@
+:root {
+    --scrollbar-w: 10px;
+}
+
+:root[data-theme="white"], :root {
+    --scrollbar-bg: #f8f8f8;
+    --scrollbar-thumb: #ccc;
+    --scrollbar-thumb-hover: #9e9e9e;
+}
+
+:root[data-theme="dark"] {
+    --scrollbar-bg: #444;
+    --scrollbar-thumb: #838383;
+    --scrollbar-thumb-hover: #d5d5d5;
+}
+
+:root[data-theme="pink"] {
+    --scrollbar-bg: #fff0f7;
+    --scrollbar-thumb: #ffc5dc;
+    --scrollbar-thumb-hover: #ffa1c7;
+}
+
+/*桌面端*/
+@media (hover: hover) and (pointer: fine) {
+    /*webkit*/
+    @media (-webkit-min-device-pixel-ratio:0) {
+        ::-webkit-scrollbar {
+            width: var(--scrollbar-w);
+            height: var(--scrollbar-w);
+        }
+        /* 按钮 */
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+        /* 轨道 */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: var(--scrollbar-bg);
+        }
+
+        /* 滑块 */
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 999px;
+            border: 3px solid var(--scrollbar-bg);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--scrollbar-thumb-hover);
+        }
+
+        /* 右下角落 */
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+
+    /*Gecko*/
+    @supports (-moz-appearance: none) {
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-thumb) transparent;
+        }
+    }
+}
+
+/*移动端*/
+@media (hover: none) and (pointer: coarse) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-thumb-hover) transparent;
+    }
+}

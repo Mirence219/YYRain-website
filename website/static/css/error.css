@@ -1,0 +1,66 @@
+:root,
+:root[data-theme="white"]
+{
+    --error-code-color: #8f8f8f;
+    --error-text-primary: #444444;
+    --error-btn-bg: #2563eb;
+    --error-btn-text: #ffffff;
+    --error-btn-hover: #1d4ed8;
+}
+
+
+:root[data-theme="pink"] {
+    --error-code-color: #8f8f8f;
+    --error-text-primary: #444444;
+    --error-btn-bg: #ffd5d5;
+    --error-btn-text: #000000;
+    --error-btn-hover: #ffb5d6;
+}
+
+:root[data-theme="dark"] {
+    --error-code-color: #a6aece;
+    --error-text-primary: #959cb9;
+    --error-btn-bg: #3b82f6;
+    --error-btn-text: #ffffff;
+    --error-btn-hover: #2563eb;
+}
+
+.error-wrap * {
+    transition: all 0.3s ease;
+}
+
+.error-wrap {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: var(--error-code-color);
+    margin: 0;
+}
+
+.error-msg {
+    font-size: 1.25rem;
+    color: var(--error-text-primary);
+    margin-bottom: 2rem;
+}
+
+.btn-home {
+    padding: 0.6rem 1.8rem;
+    background-color: var(--error-btn-bg);
+    color: var(--error-btn-text);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-home:hover {
+    background-color: var(--error-btn-hover);
+}

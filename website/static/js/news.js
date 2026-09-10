@@ -122,7 +122,7 @@ function load_news(page, size) {
 
             html_str += `
                 <li>
-                    <a class="${class_list}" href="${item.url}" target="_blank">${item.name}</a>
+                    <a class="${class_list}" href="${item.url || `./detail/${item.id}`}" ${(item.url || '') && 'target="_blank"'}>${item.name}</a>
                     <div class="news_brief">${item.brief_text || ''}</div>
                     <div class="news_meta">${date_str || ''}</div>
                 </li>

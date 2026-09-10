@@ -1,19 +1,29 @@
 /*通用面包屑导航样式*/
+:root {
+    --crumb-text-color: #777777;
+    --crumb-text-hover: #b400ff
+}
+
+:root[data-theme="dark"] {
+    --crumb-text-color: #888888;
+    --crumb-text-hover: #4bff00;
+}
+
 .breadcrumb {
     display: flex;
     align-items: center;
     padding: 10px;
     padding-left: 15px;
     gap: 10px;
+    margin-inline: 0;
 }
 
 .breadcrumb a {
-    color: #777777;
+    color: var(--crumb-text-color);
     font-size: 15px;
     text-decoration: none;
-    filter: invert(var(--theme-invert));
 }
 
 .breadcrumb a:hover {
-    color: purple;
+    color: var(--crumb-text-hover);
 }

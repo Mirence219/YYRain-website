@@ -1,5 +1,6 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a418cf1f-d837-4298-810d-c6b84dfac489</ProjectGuid>
@@ -12,12 +13,19 @@
     <Name>夜雨市官网</Name>
     <RootNamespace>夜雨市官网</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <LaunchProvider>Web launcher</LaunchProvider>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <Environment>Debug=true
 ADMIN_USER=Mirence
 ADMIN_PASSWORD=wigtonwigton!</Environment>
     <TestFramework>Pytest</TestFramework>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+    <WebServerDebug>True</WebServerDebug>
+    <WebBrowserUrl>http://127.0.0.1</WebBrowserUrl>
+    <WebBrowserPort>8080</WebBrowserPort>
+    <UseIISExpress>false</UseIISExpress>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +36,7 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="website\src\md_it.py" />
     <Compile Include="website\src\view\admin_view.py" />
     <Compile Include="website\src\constants.py" />
     <Compile Include="website\src\db_modle.py" />
@@ -35,6 +44,7 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Compile Include="website\src\view\api.py" />
     <Compile Include="website\src\view\competition_view.py" />
     <Compile Include="website\src\db_factory.py" />
+    <Compile Include="website\src\view\error_view.py" />
     <Compile Include="website\src\view\event_view.py" />
     <Compile Include="website\src\view\home_view.py" />
     <Compile Include="website\src\view\news_view.py" />
@@ -47,27 +57,42 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="doc\" />
+    <Folder Include="maintenance\" />
+    <Folder Include="website\images\" />
+    <Folder Include="website\images\44\" />
+    <Folder Include="website\images\44\ae\" />
+    <Folder Include="website\images\73\" />
+    <Folder Include="website\images\73\0a\" />
+    <Folder Include="website\images\7a\" />
+    <Folder Include="website\images\7a\c9\" />
     <Folder Include="website\src\" />
     <Folder Include="website\" />
     <Folder Include="website\src\view\" />
     <Folder Include="website\static\css\general\" />
+    <Folder Include="website\static\css\markdown\" />
     <Folder Include="website\static\font\" />
     <Folder Include="website\static\image\" />
     <Folder Include="website\static\css\" />
     <Folder Include="website\static\js\" />
     <Folder Include="website\static\js\module\" />
     <Folder Include="website\static\js\module\dom_manager\" />
+    <Folder Include="website\static\js\module\touch_gesture\" />
+    <Folder Include="website\static\js\module\touch_gesture\axis_sampler\" />
+    <Folder Include="website\static\js\module\touch_gesture\handler_config\" />
+    <Folder Include="website\static\js\module\touch_gesture\handler\" />
     <Folder Include="website\static\js\test\" />
     <Folder Include="website\static\js\package\" />
     <Folder Include="website\static\svg\" />
     <Folder Include="website\templates\" />
     <Folder Include="website\static\" />
+    <Folder Include="website\templates\error\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="doc\dom_manager API.md" />
+    <Content Include="doc\DomManager.md" />
     <Content Include="LICENSE" />
+    <Content Include="maintenance\maintenance.html" />
     <Content Include="README.md" />
-    <Content Include="sync_db.sh" />
+    <Content Include="website\static\css\error.css" />
     <Content Include="website\static\css\general\animation.css" />
     <Content Include="website\static\css\beian.css" />
     <Content Include="website\static\css\body.css" />
@@ -77,12 +102,18 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Content Include="website\static\css\general\decorator.css" />
     <Content Include="website\static\css\general\list.css" />
     <Content Include="website\static\css\general\pagination.css" />
+    <Content Include="website\static\css\general\root.css" />
+    <Content Include="website\static\css\general\scroll.css" />
     <Content Include="website\static\css\general\text.css" />
     <Content Include="website\static\css\general\theme.css" />
     <Content Include="website\static\css\home.css" />
     <Content Include="website\static\css\home_index.css" />
     <Content Include="website\static\css\index.css" />
+    <Content Include="website\static\css\markdown\github-markdown-dark.css" />
+    <Content Include="website\static\css\markdown\github-markdown-light.css" />
     <Content Include="website\static\css\news.css" />
+    <Content Include="website\static\css\news_detail.css" />
+    <Content Include="website\static\favicon.ico" />
     <Content Include="website\static\font\demo.css" />
     <Content Include="website\static\font\demo_index.html" />
     <Content Include="website\static\font\iconfont.css" />
@@ -93,6 +124,9 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Content Include="website\static\font\iconfont.woff2" />
     <Content Include="website\static\image\favicon-DEN7TZ5X.png" />
     <Content Include="website\static\image\mgcraft_logo.webp" />
+    <Content Include="website\images\44\ae\44ae2663846831c480216f009343a6f8_720.png" />
+    <Content Include="website\images\73\0a\730a0f4994588bd166e883da86d8c16e.png" />
+    <Content Include="website\images\7a\c9\7ac9a5f5bff8785d4c6c1f8cb2f1e86a.png" />
     <Content Include="website\static\image\news_page.webp" />
     <Content Include="website\static\image\background.webp" />
     <Content Include="website\static\image\event_logo.png" />
@@ -107,28 +141,54 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Content Include="website\static\image\wiki_logo.png" />
     <Content Include="website\static\js\home.js" />
     <Content Include="website\static\js\index.js" />
+    <Content Include="website\static\js\module\dom_manager\dom_manager_list.js" />
     <Content Include="website\static\js\module\dom_manager\normal_dom_manager.js" />
     <Content Include="website\static\js\module\dom_manager\button_dom_manager.js" />
-    <Content Include="website\static\js\module\dom_manager\switch_dom_manager.js" />
+    <Content Include="website\static\js\module\dom_manager\state_dom_manager.js" />
+    <Content Include="website\static\js\module\touch_gesture\abstract_gesture.js" />
+    <Content Include="website\static\js\module\touch_gesture\axis_sampler\abstract_axis_sampler.js" />
+    <Content Include="website\static\js\module\touch_gesture\axis_sampler\horizontal_axis_sampler.js" />
+    <Content Include="website\static\js\module\touch_gesture\axis_sampler\vertical_axis_sampler.js" />
+    <Content Include="website\static\js\module\touch_gesture\handler\page_handler.js" />
+    <Content Include="website\static\js\module\touch_gesture\handler_config\abstract_config.js" />
+    <Content Include="website\static\js\module\touch_gesture\handler_config\inertial_config.js" />
+    <Content Include="website\static\js\module\touch_gesture\handler_config\page_config.js" />
+    <Content Include="website\static\js\module\touch_gesture\one_way_gesture.js" />
+    <Content Include="website\static\js\module\touch_gesture\handler\abstract_handler.js" />
+    <Content Include="website\static\js\module\touch_gesture\handler\inertial_handler.js" />
     <Content Include="website\static\js\module\video_selector.js" />
     <Content Include="website\static\js\module\time_ago.js" />
     <Content Include="website\static\js\news.js" />
+    <Content Include="website\static\js\news_detail.js" />
     <Content Include="website\static\js\package\axios.min.js" />
-    <Content Include="website\static\js\test.js" />
-    <Content Include="website\static\js\test\test-switch_dom_manager.js" />
     <Content Include="website\static\js\test\test.html" />
+    <Content Include="website\static\js\test\test.js" />
     <Content Include="website\static\svg\board.svg" />
     <Content Include="website\templates\admin_login.html" />
     <Content Include="website\templates\base.html" />
     <Content Include="website\templates\beian.html" />
     <Content Include="website\templates\competition.html" />
+    <Content Include="website\templates\error\500.html" />
+    <Content Include="website\templates\error\404.html" />
     <Content Include="website\templates\event.html" />
     <Content Include="website\templates\home.html" />
     <Content Include="website\templates\index.html" />
     <Content Include="website\templates\news.html" />
+    <Content Include="website\templates\news_detail.html" />
     <Content Include="website\templates\wiki.html" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.12</Version>
+      <Description>env (Python 3.12 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
        the BeforeBuild and AfterBuild targets below. -->
@@ -137,4 +197,43 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

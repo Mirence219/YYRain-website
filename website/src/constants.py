@@ -1,2 +1,3 @@
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = "5000"
+IMAGE_DIR = "images"

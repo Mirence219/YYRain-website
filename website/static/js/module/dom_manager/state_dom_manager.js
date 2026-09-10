@@ -1,36 +1,11 @@
-import NormalDomManager from "./normal_dom_manager.js"
+import NormalDomManager, { TriggerMode, TRIGGER_MODE_LIST } from "./normal_dom_manager.js"
 
-export const TriggerMode = Object.freeze({
-    CLICK: "click",                // 左键单击
-    MOUSE_DOWN: "mousedown",       // 鼠标按下
-    MOUSE_UP: "mouseup",           // 鼠标抬起
-    DBL_CLICK: "dblclick",         // 左键双击
-    CONTEXT_MENU: "contextmenu",   // 右键单击
-    MOUSE_ENTER: "mouseenter",     // 鼠标移入
-    MOUSE_LEAVE: "mouseleave",     // 鼠标移出
-    MOUSE_OVER: "mouseover",       // 鼠标移入(冒泡)
-    MOUSE_OUT: "mouseout",         // 鼠标移出(冒泡)
-    MOUSE_MOVE: "mousemove",       // 鼠标移动
 
-    KEY_DOWN: "keydown",           // 按键按下
-    KEY_UP: "keyup",               // 按键松开
-
-    TOUCH_START: "touchstart",     // 手指按下
-    TOUCH_END: "touchend",         // 手指抬起
-    TOUCH_MOVE: "touchmove",       // 手指滑动
-
-    FOCUS: "focus",                // 获取焦点
-    BLUR: "blur",                  // 失去焦点
-
-    SCROLL: "scroll"               // 区域滚动
-});
-
-const TRIGGER_MODE_LIST = Object.values(TriggerMode);
 
 /**
- * 开关类型DOM管理器
+ * 状态机类型DOM管理器
  */
-export default class SwitchDomManager extends NormalDomManager {
+export default class StateDomManager extends NormalDomManager {
     #state_index;
     #state_count;
     #handlers;
@@ -44,9 +19,9 @@ export default class SwitchDomManager extends NormalDomManager {
      */
     constructor(state_count = 2, handlers = null, trigger_mode = TriggerMode.CLICK) {
         super();
-        console.debug("[DEBUG] 创建开关类型DOM对象管理器");
+        console.debug("[DEBUG] 创建状态机类型DOM对象管理器");
         if (state_count < 2) {
-            throw new Error("开关状态数至少为2");
+            throw new Error("状态数至少为2");
         }
         if (!TRIGGER_MODE_LIST.includes(trigger_mode)) {
             throw new Error(`不支持的事件触发模式，目前支持下列模式:${TRIGGER_MODE_LIST.join(", ")}`);
@@ -126,5 +101,19 @@ export default class SwitchDomManager extends NormalDomManager {
      */
     is_enable() {
         return this.#enable;
+    }
+
+    next_state() {
+        if (this.#enable) {
+            this.#handlers[this.#state_index]?.();
+            this.#state_index = (this.#state_index + 1) % this.#state_count;
+        }
+    }
+
+    last_state() {
+        if (this.#enable) {
+            this.#handlers[this.#state_index]?.();
+            this.#state_index = (this.#state_index - 1) % this.#state_count;
+        }
     }
 }
