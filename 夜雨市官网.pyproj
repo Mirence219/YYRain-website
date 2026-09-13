@@ -39,7 +39,7 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
     <Compile Include="website\src\md_it.py" />
     <Compile Include="website\src\view\admin_view.py" />
     <Compile Include="website\src\constants.py" />
-    <Compile Include="website\src\db_modle.py" />
+    <Compile Include="website\src\db_model.py" />
     <Compile Include="website\src\logger.py" />
     <Compile Include="website\src\view\api.py" />
     <Compile Include="website\src\view\competition_view.py" />
@@ -89,6 +89,7 @@ ADMIN_PASSWORD=wigtonwigton!</Environment>
   </ItemGroup>
   <ItemGroup>
     <Content Include="doc\DomManager.md" />
+    <Content Include="doc\TouchGesture.md" />
     <Content Include="LICENSE" />
     <Content Include="maintenance\maintenance.html" />
     <Content Include="README.md" />

@@ -2,7 +2,7 @@ from flask import Blueprint, redirect, render_template, abort, url_for
 import os
 import html
 
-from src.db_modle import NewsDetail, NewsList, NewsImg, UserInfo
+from src.db_model import NewsDetail, NewsList, NewsImg, UserInfo
 from src.md_it import render_markdown, extract_headings
 from src.constants import IMAGE_DIR
 
@@ -27,6 +27,9 @@ def news_detail(news_id):
     news_item = NewsList.query.get(news_id)
     #公告详情
     news_detail = NewsDetail.query.get(news_id)
+    if not (news_item and news_detail) or not news_item.enabled or not news_item.intrasite:
+        abort(404)
+        
     #公告封面
     news_cover_info = NewsImg.query.get(news_id)
     if news_cover_info:
@@ -35,11 +38,14 @@ def news_detail(news_id):
         news_cover_html = f'<img src="{news_cover_api}" alt="公告封面"/>'
     else:
         news_cover_html = ""
+        
     #公告发布作者
-    uid = NewsDetail.query.get(news_id).uid
-    user_name = UserInfo.query.get(uid).user_name
-    if not (news_item and news_detail) or not news_item.enabled or not news_item.intrasite:
-        abort(404)
+    user_info = NewsDetail.query.get(news_id)
+    if user_info:
+        uid = user_info.uid
+        user_name = UserInfo.query.get(uid).user_name
+    else:
+        user_name = "未知作者"
 
     #公告目录
     directory_html = ""

@@ -49,7 +49,7 @@ def init_admin(app, db):
 
     try:
         # Delay import of models to avoid circular imports at module import time
-        from src.db_modle import NewsList, VideoList
+        from src.db_model import NewsList, VideoList
     except Exception:
         return None
 

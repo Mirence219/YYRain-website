@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, render_template, send_file
 from pytest import param
-from src.db_modle import NewsList, VideoList, ImgInfo, NewsImg, UserInfo
+from src.db_model import NewsList, VideoList, ImgInfo, NewsImg, UserInfo
 from src.constants import IMAGE_DIR
 
 import os

@@ -1,4 +1,4 @@
-# dom_manager API.md
+# DomManager API.md
 
 > 
 > 模块：`normal_dom_manager.js` / `state_dom_manager.js`
