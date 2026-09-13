@@ -2,6 +2,7 @@ from flask import request, redirect, url_for, render_template, flash
 from flask_admin import Admin, AdminIndexView, expose
 from flask_admin.contrib.sqla import ModelView
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user
+from sqlalchemy import event
 
 
 import os
@@ -21,6 +22,23 @@ class SecureModelView(ModelView):
 
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('admin_login', next=request.url))
+
+    # 显示主键字段
+    column_display_pk = True
+
+    @property
+    def column_list(self):
+        # 列表中包含所有列与关系
+        cols = [c.key for c in self.model.__mapper__.columns]
+        rels = [r.key for r in self.model.__mapper__.relationships]
+        return cols + rels
+
+    @property
+    def form_columns(self):
+        # 表单中包含所有列与关系，Flask-Admin 会将 relationship 渲染为下拉
+        cols = [c.key for c in self.model.__mapper__.columns]
+        rels = [r.key for r in self.model.__mapper__.relationships]
+        return cols + rels
 
 
 class SimpleUser(UserMixin):
@@ -65,6 +83,17 @@ def init_admin(app, db):
     # 关键配置：未登录自动跳转到登录路由
     login_manager.login_view = "admin_login"
     login_manager.login_message = "请先登录管理员后台账号"
+
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+    "connect_args": {"check_same_thread": False},
+    "pool_pre_ping": True,
+    }
+
+    with app.app_context():
+        engine = db.engine
+        @event.listens_for(engine, "connect")
+        def _enable_fk(conn, _):
+            conn.execute("PRAGMA foreign_keys=ON;")
 
     @login_manager.user_loader
     def load_user(user_id):

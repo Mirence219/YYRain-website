@@ -91,7 +91,7 @@ class UserInfo(db.Model):
     Logger.info("数据表user_info校验/创建完成")
 
     def __repr__(self):
-        return f"<UserInfo uid={self.uid}, name={self.name}>"
+        return f"<UserInfo uid={self.uid}, name={self.user_name}>"
 
     def to_dict(self) -> dict:
         return {
@@ -103,9 +103,7 @@ class UserInfo(db.Model):
 class NewsDetail(db.Model):
     __tablename__ = "news_detail"
 
-    # 主键同时为外键，引用 news_list.id；不要自增
     id = db.Column(db.Integer, db.ForeignKey("news_list.id"), primary_key=True, autoincrement=False)
-    # 新增 uid 外键，引用 user_info.uid
     uid = db.Column(db.Integer, db.ForeignKey("user_info.uid"), nullable=False)
     title = db.Column(db.Text, nullable=False)
     content = db.Column(db.Text, nullable=False)
@@ -116,6 +114,20 @@ class NewsDetail(db.Model):
     )
 
     Logger.info("数据表news_detail校验/创建完成")
+
+    # 关系
+    user = db.relationship(
+        "UserInfo",
+        backref=db.backref("news_details", lazy="dynamic"),
+        foreign_keys=[uid]
+    )
+    # 由于 id 同时为主键与外键，建立到 NewsList 的一对一关系
+    news = db.relationship(
+        "NewsList",
+        backref=db.backref("detail", uselist=False),
+        foreign_keys=[id],
+        uselist=False
+    )
 
     def __repr__(self):
         return f"<NewsDetail id={self.id}, title={self.title}, uid={self.uid}>"
@@ -165,6 +177,18 @@ class NewsImg(db.Model):
     img_id = db.Column(db.Integer, db.ForeignKey("img_info.img_id"), nullable=True)
 
     Logger.info("数据表news_img校验/创建完成")
+
+    # 关系
+    news = db.relationship(
+        "NewsList",
+        backref=db.backref("images", lazy="dynamic"),
+        foreign_keys=[news_id]
+    )
+    img = db.relationship(
+        "ImgInfo",
+        backref=db.backref("used_in", lazy="dynamic"),
+        foreign_keys=[img_id]
+    )
 
     def __repr__(self):
         return f"<NewsImg news_id={self.news_id}, img_id={self.img_id}>"
