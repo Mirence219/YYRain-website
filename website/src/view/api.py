@@ -55,11 +55,14 @@ def get_img(img_id):
     img_name = img.img_name if img.img_name else "image"
     img_type = img_path.split(".")[-1] if "." in img_path else "jpg"
 
-    resp = send_file(img_path, mimetype=f'image/{img_type}', as_attachment=True, download_name=img_name)
-    resp.headers["Cache-Control"] = "public, max-age=31536000"
-    resp.headers["Content-Disposition"] = f'inline; filename="{img_name}"'
+    try:
+        resp = send_file(img_path, mimetype=f'image/{img_type}', as_attachment=True, download_name=img_name)
+        resp.headers["Cache-Control"] = "public, max-age=31536000"
+        resp.headers["Content-Disposition"] = f'inline; filename="{img_name}"'
     
-    return resp
+        return resp
+    except:
+        return render_template("error/404.html"), 404
 
 
 @api_bp.route("/news_cover", methods = ["GET"])

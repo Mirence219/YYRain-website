@@ -27,6 +27,9 @@ https://github.com/sindresorhus/github-markdown-css
 .markdown-body a {
     text-decoration: underline;
     text-underline-offset: .2rem;
+}
+
+.markdown-body * {
     word-break: break-all;
 }
 
@@ -125,6 +128,22 @@ https://github.com/sindresorhus/github-markdown-css
   box-sizing: content-box;
 }
 
+.markdown-body p:has(> img + img) {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.markdown-body p:has(> img + img) > img {
+    /* flex-basis 使用图片固有尺寸比例 */
+    flex: 0 1 auto;
+    min-width: 0;
+    height: auto;
+    object-fit: contain;
+    /* 关键：以图片本身宽高比，决定占据的flex空间 */
+    flex-shrink: 1;
+}
+
 .markdown-body code,
 .markdown-body kbd,
 .markdown-body pre,
@@ -217,7 +236,6 @@ https://github.com/sindresorhus/github-markdown-css
   border-spacing: 0;
   border-collapse: collapse;
   display: block;
-  width: max-content;
   max-width: 100%;
   overflow: auto;
   font-variant: tabular-nums;

@@ -64,7 +64,6 @@ body.news_detail .total_wrap {
     padding: 1rem 1.25rem;
     margin-inline: 0;
     max-height: 400px;
-    overflow-y: auto;
     width: 100%;
 }
 
@@ -128,6 +127,7 @@ body.news_detail .total_wrap {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow-y: auto;
 }
 
 .news_content_directory li {
