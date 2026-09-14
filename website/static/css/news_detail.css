@@ -9,6 +9,10 @@ body.news_detail .total_wrap {
     padding: 15px;
 }
 
+body.news_detail .breadcrumb {
+    margin-inline: 0;
+}
+
 .content_wrap {
     display: flex;
     flex-flow: row;
